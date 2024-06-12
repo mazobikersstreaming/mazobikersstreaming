@@ -326,65 +326,81 @@ $('button').on('click', function () {
 //# sourceURL=pen.js
     </script>
 <!-- --------------------###------------------ -->
-	
+
+<!-- INICIO NOVO DISPLAY COM MENU DE OPCAO DE STREAMING IPTV PARA ASSITIR -->	
 <center> 
 
 <div style='background-color: rgba(255, 99, 71, 0.2)'>
 	<hr/>
-     	<!-- INICIO BANNER PROVAS -->
-     	<div id='contentbanner'>
-	<center>
-      		<img height='100%' onmouseout='this.src=&apos;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCUiKrwX-Vdof4Yu44eEQ_Vl-DlMZ7kZIn8hwMS00nDRHaXq0bt6hl_nUDG8O_JhFIsAMOhw8IXg958Pg-iWr4k6DyvhMrEGlvLH3adM192iUnHR3uEDowfn33_q5XJGe912sz9lTDpE4xdU6V9W39xHH2sh-qaacNO1-rI0eEqRRcuBFaK3Qi00EFGaqx/s2310/parisnice_top.webp&apos;' onmouseover='this.src=&apos;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCPqDXMsoXZwXFETnMbOtEBeTVUMfP6jf3dUGXIKoQ99ipBLwJApn6exBEemOBNeApBEg85Ssd2V9V-8N6m84s9T1_QTUt4DJKwDFZyKNL6A5wZB62bK0e7uA8XTK02HA69Ad0n4_DYK4r5Pk-I8AwFRFgrXQmISR5X_k2e9bEjtyAKERY9Torg9JJ46Um/s2310/parisnice_full.webp&apos;' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCUiKrwX-Vdof4Yu44eEQ_Vl-DlMZ7kZIn8hwMS00nDRHaXq0bt6hl_nUDG8O_JhFIsAMOhw8IXg958Pg-iWr4k6DyvhMrEGlvLH3adM192iUnHR3uEDowfn33_q5XJGe912sz9lTDpE4xdU6V9W39xHH2sh-qaacNO1-rI0eEqRRcuBFaK3Qi00EFGaqx/s2310/parisnice_top.webp' style='width: 100%; object-fit: contain; max-width:1200px;'/>
-     	</center>
-</div>
+     	<!-- ---INICIO BANNER PROVAS--------------------------------------------------------------------------- -->
 
+		<center>
+		<div id='contentbanner'>
+			<img height='100%' onmouseout='this.src=&apos;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCUiKrwX-Vdof4Yu44eEQ_Vl-DlMZ7kZIn8hwMS00nDRHaXq0bt6hl_nUDG8O_JhFIsAMOhw8IXg958Pg-iWr4k6DyvhMrEGlvLH3adM192iUnHR3uEDowfn33_q5XJGe912sz9lTDpE4xdU6V9W39xHH2sh-qaacNO1-rI0eEqRRcuBFaK3Qi00EFGaqx/s2310/parisnice_top.webp&apos;' onmouseover='this.src=&apos;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCPqDXMsoXZwXFETnMbOtEBeTVUMfP6jf3dUGXIKoQ99ipBLwJApn6exBEemOBNeApBEg85Ssd2V9V-8N6m84s9T1_QTUt4DJKwDFZyKNL6A5wZB62bK0e7uA8XTK02HA69Ad0n4_DYK4r5Pk-I8AwFRFgrXQmISR5X_k2e9bEjtyAKERY9Torg9JJ46Um/s2310/parisnice_full.webp&apos;' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCUiKrwX-Vdof4Yu44eEQ_Vl-DlMZ7kZIn8hwMS00nDRHaXq0bt6hl_nUDG8O_JhFIsAMOhw8IXg958Pg-iWr4k6DyvhMrEGlvLH3adM192iUnHR3uEDowfn33_q5XJGe912sz9lTDpE4xdU6V9W39xHH2sh-qaacNO1-rI0eEqRRcuBFaK3Qi00EFGaqx/s2310/parisnice_top.webp' style='width: 100%; object-fit: contain; max-width:1200px;'/>
+     		</div>
+		<!-- INICIO TIMER PARA BANNER DAS PROVAS -->
+			 <script type='text/javascript'>//<![CDATA[
+		        	// Get the current date
+		        	var currentDate = new Date();
+		
+		       		// Define the start and end dates of the desired range
+		        	var startDate = new Date("2024-02-29");
+		        	var endDate = new Date("2024-03-10");
+		
+		        	// Check if the current date is within the specified range
+		        	if (currentDate >= startDate && currentDate <= endDate) {
+		            // Content is within the date range, so display it
+		            document.getElementById("contentbanner").style.display = "block";
+		        	} else {
+		            // Content is outside the date range, so hide it
+		            document.getElementById("contentbanner").style.display = "none";
+		        }//]]></script>
+		</center>
+		<!-- INICIO TIMER PARA BANNER DAS PROVAS -->
 	
-       <p>Através destas fontes você consegue acompanhar as principais provas do ciclismo mundial!</p>
+	<!-- ---FIM BANNER PROVAS------------------------------------------------------------------------------ -->
+<center>
+	<p>Através destas fontes você consegue acompanhar as principais provas do ciclismo mundial!</p>
     	     <p>Clique em uma das Opções de Streaming para assistir...</p> -->
     	<p> </p>
 
-<!-- INICIO BOTOES DAS STREAMINGS  -->
+	<!-- INICIO BOTOES DAS STREAMINGS------------------------------------------------------------------------------ -->
+	
+	<div style='max-width: 1000px;'>
+	
+		<button class='canalbutton' onclick='myFunction()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpDqF8DZJw6baQxTd_nHrcxI6SeNB9WFQB1A4N8V_wl63Lh9mxaXmm-8XQ8DOlvZBL6WVPTEchQV5oVV3O_68ivaOShkdZRsTJDW_7kcHJKL_LQu4nkZjzSj5L8eB4kcuuB0LdEgeO6Mmn2mfuqQTInYYblvNtixT5BQmmVEEsoQISQTCyyN3oaowffg/s391/CYCLINGTODAY.png' style='height: 20px;'/>-Audio:ENG.</button><a> </a>
+		<button class='canalbutton' onclick='myFunction2()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>-Audio:ENG.</button><a> </a>
+		<button class='canalbutton' onclick='myFunction3()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>-Audio:ESP.</button><a> </a>
+		<button class='canalbutton' onclick='myFunction10()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>-Audio:POR.</button><a> </a>
+		<button class='canalbutton' onclick='myFunction4()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>-Audio:ENG.</button><a> </a>
+		<button class='canalbutton' onclick='myFunction5()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>-Audio:ESP.</button><a> </a>
+		<button class='canalbutton' onclick='myFunction11()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>-Audio:POR.</button><a> </a>
+		<button class='canalbutton' onclick='myFunction6()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAM5WyxKNzXSfDScHtj49Mr9NliSXN-gdCtxr38uvj7oIABoQN6aBii08yXO8TFP2LovSgJaA2d0eyxXjyjSGJuvaNcX0VxrXjMu3nSRGpvlIFqJx9gE6-628GCq4le7vyG7gZLhdbWdi7ptxsLOBFX3FNpQnZ83k2nRdr0lxN3Y8-GMILTUE-Pjek8g/s391/ESPN1.png' style='height: 20px;'/>-Audio:BR..</button><a> </a>
+		<button class='canalbutton' onclick='myFunction7()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWJaiCiamwdK5jDliUy6ZPPhomitdofvMV591BLx7owodvJFOfWXV34CzONF2ImfDTHM6RHjh-Z5RXJVShHsdvPX8iPuzl-7YzPY6DP0__8ovTdeRa_FnSlKzoJy4BiKsQFKhg-dOeXTUFfGGYF65itGCOb3W5dzoMtqSfTG_S_hZXJvdLzOBN08kifA/s391/ESPN2.png' style='height: 20px;'/>-Audio:BR..</button><a> </a>
+		<button class='canalbutton' onclick='myFunction8()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHoWrwVzxFKPFSaPLsgXYVIh1Nd6F71jTm5T195uOChumUYs0Jl61eNyyht9v1mlXwvLe9mu8ZtmXkcwQ-C2DAA3VRWDvlIUi-ov2Ua5NFG-eHRA53VP67RCeoGb9SR6nTbLI94NKt9QbsFPfLha_a7MGicDp4Q08KjA-04cBF3pjr8rX4IyjcCMTCDQ/s391/ESPN3.png' style='height: 20px;'/>-Audio:BR..</button><a> </a>
+		<button class='canalbutton' onclick='myFunction12()'><img alt='Image' src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Rede_Minas_logo.png/799px-Rede_Minas_logo.png' style='height: 20px;'/>-Audio:BR..</button><a> </a>
+		<button class='canalbutton' onclick='myFunction13()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJOMHv-gzyHsEuprqbrm1seupjcJ74vkxHUYYXHnp6IesaQAipZNd39MFjjVKmdwpzs3rj4BsPryiXWjMDFwIiZ3wJj0is-h9vsr-wYigiUHb-UKePSj-RjvXHxniqMMJT-c3eLt_wYmY7ATRWx0NK0EIuXPxHh39Aw2wMU9xF1Q2maALnCu3FAZpmto9C/s391/RTP1.png' style='height: 20px;'/>-Audio:POR.</button><a> </a>
+		<button class='canalbutton2' onclick='myFunction9()'>.____SIGA A CORRIDA AO VIVO___.</button><a> </a>
+	
+	</div>
+	        <p> </p>
+		<p> </p>
+	</center> 
 
-<div style='max-width: 1000px;'>
-
-<button class='canalbutton' onclick='myFunction()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpDqF8DZJw6baQxTd_nHrcxI6SeNB9WFQB1A4N8V_wl63Lh9mxaXmm-8XQ8DOlvZBL6WVPTEchQV5oVV3O_68ivaOShkdZRsTJDW_7kcHJKL_LQu4nkZjzSj5L8eB4kcuuB0LdEgeO6Mmn2mfuqQTInYYblvNtixT5BQmmVEEsoQISQTCyyN3oaowffg/s391/CYCLINGTODAY.png' style='height: 20px;'/>-Audio:ENG.</button><a> </a>
-<button class='canalbutton' onclick='myFunction2()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>-Audio:ENG.</button><a> </a>
-<button class='canalbutton' onclick='myFunction3()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>-Audio:ESP.</button><a> </a>
-<button class='canalbutton' onclick='myFunction10()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>-Audio:POR.</button><a> </a>
-<button class='canalbutton' onclick='myFunction4()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>-Audio:ENG.</button><a> </a>
-<button class='canalbutton' onclick='myFunction5()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>-Audio:ESP.</button><a> </a>
-<button class='canalbutton' onclick='myFunction11()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>-Audio:POR.</button><a> </a>
-<button class='canalbutton' onclick='myFunction6()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAM5WyxKNzXSfDScHtj49Mr9NliSXN-gdCtxr38uvj7oIABoQN6aBii08yXO8TFP2LovSgJaA2d0eyxXjyjSGJuvaNcX0VxrXjMu3nSRGpvlIFqJx9gE6-628GCq4le7vyG7gZLhdbWdi7ptxsLOBFX3FNpQnZ83k2nRdr0lxN3Y8-GMILTUE-Pjek8g/s391/ESPN1.png' style='height: 20px;'/>-Audio:BR..</button><a> </a>
-<button class='canalbutton' onclick='myFunction7()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWJaiCiamwdK5jDliUy6ZPPhomitdofvMV591BLx7owodvJFOfWXV34CzONF2ImfDTHM6RHjh-Z5RXJVShHsdvPX8iPuzl-7YzPY6DP0__8ovTdeRa_FnSlKzoJy4BiKsQFKhg-dOeXTUFfGGYF65itGCOb3W5dzoMtqSfTG_S_hZXJvdLzOBN08kifA/s391/ESPN2.png' style='height: 20px;'/>-Audio:BR..</button><a> </a>
-<button class='canalbutton' onclick='myFunction8()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHoWrwVzxFKPFSaPLsgXYVIh1Nd6F71jTm5T195uOChumUYs0Jl61eNyyht9v1mlXwvLe9mu8ZtmXkcwQ-C2DAA3VRWDvlIUi-ov2Ua5NFG-eHRA53VP67RCeoGb9SR6nTbLI94NKt9QbsFPfLha_a7MGicDp4Q08KjA-04cBF3pjr8rX4IyjcCMTCDQ/s391/ESPN3.png' style='height: 20px;'/>-Audio:BR..</button><a> </a>
-<button class='canalbutton' onclick='myFunction12()'><img alt='Image' src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Rede_Minas_logo.png/799px-Rede_Minas_logo.png' style='height: 20px;'/>-Audio:BR..</button><a> </a>
-<button class='canalbutton' onclick='myFunction13()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJOMHv-gzyHsEuprqbrm1seupjcJ74vkxHUYYXHnp6IesaQAipZNd39MFjjVKmdwpzs3rj4BsPryiXWjMDFwIiZ3wJj0is-h9vsr-wYigiUHb-UKePSj-RjvXHxniqMMJT-c3eLt_wYmY7ATRWx0NK0EIuXPxHh39Aw2wMU9xF1Q2maALnCu3FAZpmto9C/s391/RTP1.png' style='height: 20px;'/>-Audio:POR.</button><a> </a>
-<button class='canalbutton2' onclick='myFunction9()'>.____SIGA A CORRIDA AO VIVO___.</button><a> </a>
-</center> 
-
-<!-- FIM BOTOES DAS STREAMINGS -->
+<!-- FIM BOTOES DAS STREAMINGS------------------------------------------------------------------------------ -->
   
-<!-- INICIO JANELAS DE STREAMING -->
-  
-</div>
-
-<!-- INICIO JANELAS DE STREAMING -->
+<!-- INICIO JANELAS DE STREAMING------------------------------------------------------------------------------ -->
   
 	<hr/>
 		
 		<center>
 <!-- INICIO _______ cycling.today /* LINK OK */ ______________________ -->
-          
 <div id='myDIV' style='display:none'>
-
 	<a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpDqF8DZJw6baQxTd_nHrcxI6SeNB9WFQB1A4N8V_wl63Lh9mxaXmm-8XQ8DOlvZBL6WVPTEchQV5oVV3O_68ivaOShkdZRsTJDW_7kcHJKL_LQu4nkZjzSj5L8eB4kcuuB0LdEgeO6Mmn2mfuqQTInYYblvNtixT5BQmmVEEsoQISQTCyyN3oaowffg/s391/CYCLINGTODAY.png' style='height: 20px;'/>Audio:.ENGLISH..</a>
-            
          <!-- Tizcycling/CyclingToday /* LINK OK */  OBS: SUBSTITUIR "&" POR "&amp;" NOS LINKS -->
-
           <iframe allowfullscreen='' class='streamshark-iframe' frameborder='0' height='620' src='https://cycling.today/live-streaming/' width='900'/> -->
                    
-<!--          <script type='text/javascript'>//<![CDATA[
-
+<!-- <script type='text/javascript'>//<![CDATA[
 (function() {
   // Get all video iframes from StreamShark only
   const iframes = document.querySelectorAll('iframe[src*="//cycling.today"]');
@@ -416,7 +432,6 @@ $('button').on('click', function () {
   }
 })();
   //]]></script> -->
-        
 </div>
       
       
