@@ -1,20 +1,20 @@
 
 <!DOCTYPE html>
-<html b:version='2' expr:class='&quot;apriezthtml v2 &quot; + data:blog.mobileClass + &quot; &quot; + data:blog.languageDirection' expr:dir='data:blog.languageDirection' id='apriezthtml' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html b:version='2' expr:class='"apriezthtml v2 " + data:blog.mobileClass + " " + data:blog.languageDirection' expr:dir='data:blog.languageDirection' id='apriezthtml' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
 	<meta charset="UTF-8">
 	<meta content='width=device-width,initial-scale=1' name='viewport'/>
 
 	<b:include data='blog' name='all-head-content'/>
 	<title>
-	  <b:if cond='data:blog.pageType == &quot;index&quot;'>
+	  <b:if cond='data:blog.pageType == "index"'>
 	    <data:blog.pageTitle/>
-	  <b:elseif cond='data:blog.pageType != &quot;error_page&quot;'/> 
+	  <b:elseif cond='data:blog.pageType != "error_page"'/> 
 	    <data:blog.pageName/> | <data:blog.title/>
 		404 | <data:blog.title/> 
 	  </b:if>
 	</title>
-        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+
   
 <style>
 body {
@@ -67,29 +67,31 @@ button {
 /* FIM Responsive iframe using aspect-ratio property (the proper way) */
 
 /* INICIO MENU-DIV PARA STREAMING */
-#myDIV {
+#myDIVA {
   max-width: 900px;
-  max-height: 640px;
-  padding-top:-16px
+  max-height: 645px;
+  padding-top:-16px;
   text-align: center;
   align-items: center;
   /*margin-top: 20px;*/
   /*background-color: rgba(255, 99, 71, 0.2);*/
 }
 
-#myDIV2 {
+#myDIVB {
   max-width: 900px;
-  max-height: 640px;
-  padding-top:-16px
+  max-height: 645px;
+  padding-top:-16px;
   text-align: center;
   align-items: center;
+  visibility: hidden;
   /*margin-top: 20px;*/
   /*background-color: rgba(255, 99, 71, 0.2);*/
 }
+    
 #myDIV3 {
   max-width: 900px;
   max-height: 640px;
-  padding-top:-16px
+  padding-top:-16px;
   text-align: center;
   align-items: center;
   /*margin-top: 20px;*/
@@ -98,7 +100,7 @@ button {
 #myDIV4 {
   max-width: 900px;
   max-height: 640px;
-  padding-top:-16px
+  padding-top:-16px;
   text-align: center;
   align-items: center;
   /*margin-top: 20px;*/
@@ -107,7 +109,7 @@ button {
 #myDIV5 {
   max-width: 900px;
   max-height: 640px;
-  padding-top:-16px
+  padding-top:-16px;
   text-align: center;
   align-items: center;
   /*margin-top: 20px;*/
@@ -116,7 +118,7 @@ button {
 #myDIV6 {
   max-width: 900px;
   max-height: 640px;
-  padding-top:-16px
+  padding-top:-16px;
   text-align: center;
   align-items: center;
   /*margin-top: 20px;*/
@@ -125,7 +127,7 @@ button {
 #myDIV7 {
   max-width: 900px;
   max-height: 640px;
-  padding-top:-16px
+  padding-top:-16px;
   text-align: center;
   align-items: center;
   /*margin-top: 20px;*/
@@ -134,7 +136,7 @@ button {
 #myDIV8 {
   max-width: 900px;
   max-height: 640px;
-  padding-top:-16px
+  padding-top:-16px;
   text-align: center;
   align-items: center;
   /*margin-top: 20px;*/
@@ -143,7 +145,7 @@ button {
 #myDIV10 {
   max-width: 900px;
   max-height: 640px;
-  padding-top:-16px
+  padding-top:-16px;
   text-align: center;
   align-items: center;
   /*margin-top: 20px;*/
@@ -152,7 +154,7 @@ button {
 #myDIV11 {
   max-width: 900px;
   max-height: 640px;
-  padding-top:-16px
+  padding-top:-16px;
   text-align: center;
   align-items: center;
   /*margin-top: 20px;*/
@@ -161,7 +163,7 @@ button {
 #myDIV12 {
   max-width: 900px;
   max-height: 640px;
-  padding-top:-16px
+  padding-top:-16px;
   text-align: center;
   align-items: center;
   /*margin-top: 20px;*/
@@ -170,7 +172,7 @@ button {
 #myDIV13 {
   max-width: 900px;
   max-height: 640px;
-  padding-top:-16px
+  padding-top:-16px;
   text-align: center;
   align-items: center;
   /*margin-top: 20px;*/
@@ -179,7 +181,7 @@ button {
 #myDIV9 {
   max-width: 1000px;
   max-height: 635px;
-  padding-top:-16px
+  padding-top:-16px;
   text-align: center;
   align-items: center;
   /*margin-top: 20px;*/
@@ -295,18 +297,22 @@ button {
   
 </style>
 
-<script>
+<!-- <script>
   window.console = window.console || function(t) {};
-</script>
+</script> -->
 
-  
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    
+<script src="https://github.com/mazobikersstreaming/mazobikersstreaming/blob/main/sandblaster.js"></script> 
+
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js'/>
   
 </head>
 
 <body expr:class='data:blog.pageType' id='webpage' itemscope='' itemtype='http://schema.org/WebPage'>
 	<div class='body-area' id='body-area'>
 	<div class='container-outer'>
-	<div expr:class='(data:blog.url == data:blog.homepageUrl ? &quot;home-area&quot; : data:blog.pageType in {&quot;static_page&quot;, &quot;item&quot;} ? &quot;item-area&quot; : &quot;index-area&quot;)+ &quot; container&quot;' id='container'>
+	<div expr:class='(data:blog.url == data:blog.homepageUrl ? "home-area" : data:blog.pageType in {"static_page", "item"} ? "item-area" : "index-area")+ " container"' id='container'>
 
 	<script type='text/javascript'>
 	//<![CDATA[    
@@ -355,22 +361,92 @@ $('button').on('click', function () {
 		<!-- INICIO TIMER PARA BANNER DAS PROVAS -->
 	
 	<!-- ---FIM BANNER PROVAS------------------------------------------------------------------------------ -->
+    
+    <!-- INICIO BOTOES DAS STREAMINGS------------------------------------------------------------------------------ -->
 <center>
-	<p>Através destas fontes você consegue acompanhar as principais provas do ciclismo mundial!</p>
-    	     <p>Clique em uma das Opções de Streaming para assistir...</p>
+	    <p>Através destas fontes você consegue acompanhar as principais provas do ciclismo mundial!</p>
+    	<p>Clique em uma das Opções de Streaming para assistir...</p>
     	<p> </p>
-
-	<!-- INICIO BOTOES DAS STREAMINGS------------------------------------------------------------------------------ -->
 	
 	<div style='max-width: 1000px;'>
 	
-		<button class="canalbutton" onclick="myFunction()"><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpDqF8DZJw6baQxTd_nHrcxI6SeNB9WFQB1A4N8V_wl63Lh9mxaXmm-8XQ8DOlvZBL6WVPTEchQV5oVV3O_68ivaOShkdZRsTJDW_7kcHJKL_LQu4nkZjzSj5L8eB4kcuuB0LdEgeO6Mmn2mfuqQTInYYblvNtixT5BQmmVEEsoQISQTCyyN3oaowffg/s391/CYCLINGTODAY.png' style='height: 20px;'/>-Audio:ENG.</button><a> </a>
-		<button class='canalbutton' onclick='myFunction2()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>-Audio:ENG.</button><a> </a>
-		<button class='canalbutton' onclick='myFunction3()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>-Audio:ESP.</button><a> </a>
-		<button class='canalbutton' onclick='myFunction10()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>-Audio:POR.</button><a> </a>
-		<button class='canalbutton' onclick='myFunction4()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>-Audio:ENG.</button><a> </a>
-		<button class='canalbutton' onclick='myFunction5()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>-Audio:ESP.</button><a> </a>
+		<button class='canalbutton' id='myFunctionA'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpDqF8DZJw6baQxTd_nHrcxI6SeNB9WFQB1A4N8V_wl63Lh9mxaXmm-8XQ8DOlvZBL6WVPTEchQV5oVV3O_68ivaOShkdZRsTJDW_7kcHJKL_LQu4nkZjzSj5L8eB4kcuuB0LdEgeO6Mmn2mfuqQTInYYblvNtixT5BQmmVEEsoQISQTCyyN3oaowffg/s391/CYCLINGTODAY.png' style='height: 20px;'/>-Audio:ENG.</button><a> </a>
+                <script>
+            document.getElementById('myFunctionA').addEventListener('click', function() {
+                var x = document.getElementById('myDIVA');
+                  if (x.style.display === 'none') {
+                    x.style.display = 'block';
+                  } else {
+                    x.style.display = 'none';
+                  }
+            });
+        </script>
+        
+		<button class='canalbutton' id='myFunctionB'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>-Audio:ENG.</button><a> </a>
+                <script>
+            document.getElementById('myFunctionB').addEventListener('click', function() {
+                var x = document.getElementById('myDIVB');
+                  if (x.style.display === 'none') {
+                    x.style.display = 'block';
+                  } else {
+                    x.style.display = 'none';
+                  }
+            });
+        </script>
+        
+        
+
+        
+		<button class="canalbutton" id="myFunction03"><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>-Audio:ESP.</button><a> </a>
+        
+		<button class="canalbutton" id="myFunction10"><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>-Audio:POR.</button><a> </a>
+        <script>
+            document.getElementById("myFunction10").addEventListener("click", function() {
+                var x = document.getElementById("myDIV10");
+                  if (x.style.display === "none") {
+                    x.style.display = "block";
+                  } else {
+                    x.style.display = "none";
+                  }
+            });
+        </script>    
+        
+		<button class='canalbutton' id="myFunction04"><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>-Audio:ENG.</button><a> </a>
+        <script>
+            document.getElementById("myFunction04").addEventListener("click", function() {
+                var x = document.getElementById("myDIV4");
+                  if (x.style.display === "none") {
+                    x.style.display = "block";
+                  } else {
+                    x.style.display = "none";
+                  }
+            });
+        </script>
+        
+		<button class='canalbutton' id="myFunction05"><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>-Audio:ESP.</button><a> </a>
+       <script>
+            document.getElementById("myFunction05").addEventListener("click", function() {
+                var x = document.getElementById("myDIV5");
+                  if (x.style.display === "none") {
+                    x.style.display = "block";
+                  } else {
+                    x.style.display = "none";
+                  }
+            });
+        </script>
+        
 		<button class='canalbutton' onclick='myFunction11()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>-Audio:POR.</button><a> </a>
+        <script>
+            document.getElementById("myFunction11").addEventListener("click", function() {
+                var x = document.getElementById("myDIV11");
+                  if (x.style.display === "none") {
+                    x.style.display = "block";
+                  } else {
+                    x.style.display = "none";
+                  }
+            });
+        </script>
+        
 		<button class='canalbutton' onclick='myFunction6()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAM5WyxKNzXSfDScHtj49Mr9NliSXN-gdCtxr38uvj7oIABoQN6aBii08yXO8TFP2LovSgJaA2d0eyxXjyjSGJuvaNcX0VxrXjMu3nSRGpvlIFqJx9gE6-628GCq4le7vyG7gZLhdbWdi7ptxsLOBFX3FNpQnZ83k2nRdr0lxN3Y8-GMILTUE-Pjek8g/s391/ESPN1.png' style='height: 20px;'/>-Audio:BR..</button><a> </a>
 		<button class='canalbutton' onclick='myFunction7()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWJaiCiamwdK5jDliUy6ZPPhomitdofvMV591BLx7owodvJFOfWXV34CzONF2ImfDTHM6RHjh-Z5RXJVShHsdvPX8iPuzl-7YzPY6DP0__8ovTdeRa_FnSlKzoJy4BiKsQFKhg-dOeXTUFfGGYF65itGCOb3W5dzoMtqSfTG_S_hZXJvdLzOBN08kifA/s391/ESPN2.png' style='height: 20px;'/>-Audio:BR..</button><a> </a>
 		<button class='canalbutton' onclick='myFunction8()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHoWrwVzxFKPFSaPLsgXYVIh1Nd6F71jTm5T195uOChumUYs0Jl61eNyyht9v1mlXwvLe9mu8ZtmXkcwQ-C2DAA3VRWDvlIUi-ov2Ua5NFG-eHRA53VP67RCeoGb9SR6nTbLI94NKt9QbsFPfLha_a7MGicDp4Q08KjA-04cBF3pjr8rX4IyjcCMTCDQ/s391/ESPN3.png' style='height: 20px;'/>-Audio:BR..</button><a> </a>
@@ -383,7 +459,7 @@ $('button').on('click', function () {
 		<p> </p>
 	</center> 
 
-<!-- FIM BOTOES DAS STREAMINGS------------------------------------------------------------------------------ -->
+    <!-- FIM BOTOES DAS STREAMINGS------------------------------------------------------------------------------ -->
   
 <!-- INICIO JANELAS DE STREAMING------------------------------------------------------------------------------ -->
   
@@ -391,10 +467,10 @@ $('button').on('click', function () {
 		
 		<center>
 <!-- INICIO _______ cycling.today /* LINK OK */ ___________________________________________________________ -->
-<div id='myDIV' style='display:none'>
+<div id='myDIVA' style='display:none;'>
 	<a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpDqF8DZJw6baQxTd_nHrcxI6SeNB9WFQB1A4N8V_wl63Lh9mxaXmm-8XQ8DOlvZBL6WVPTEchQV5oVV3O_68ivaOShkdZRsTJDW_7kcHJKL_LQu4nkZjzSj5L8eB4kcuuB0LdEgeO6Mmn2mfuqQTInYYblvNtixT5BQmmVEEsoQISQTCyyN3oaowffg/s391/CYCLINGTODAY.png' style='height: 20px;'/>Audio:.ENGLISH..</a>
          <!-- Tizcycling/CyclingToday /* LINK OK */  OBS: SUBSTITUIR "&" POR "&amp;" NOS LINKS -->
-          <iframe allowfullscreen='' class='streamshark-iframe' frameborder='0' height='620' src='https://cycling.today/live-streaming/' width='900'/> -->
+          <iframe allowfullscreen='' class='streamshark-iframe' frameborder='0' height='620' src='https://cycling.today/live-streaming/' width='900'/>
                    
 <!-- <script type='text/javascript'>//<![CDATA[
 (function() {
@@ -432,48 +508,49 @@ $('button').on('click', function () {
 <!-- FIM _______ cycling.today /* LINK OK */ ___________________________________________________________ -->     
       
 <!-- INICIO _______ EUROSPORT1 UK /* LINK OK */ ___________________________________________________________ -->
-<div id='myDIV2' style='display:none'>
-	<a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>Audio:.ENGLISH..</a>        
-	<iframe allowfullscreen='' class='streamshark-iframe' do-not-allow='autoplay' frameborder='no' height='620' sandbox='allow-scripts' src='//popcdn.day/go.php?stream=Eurosport1UK' width='900'/>
+<div id='myDIVB' style='display:none;'>
+	<a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>Audio:.ENGLISH..</a>
+         <!-- Tizcycling/CyclingToday /* LINK OK */  OBS: SUBSTITUIR "&" POR "&amp;" NOS LINKS -->
+          <iframe allowfullscreen='' class='streamshark-iframe' frameborder='0' height='620' sandbox='allow-scripts' src='https://popcdn.day/go.php?stream=Eurosport1UK' width='900'/>
 
-	<!-- INICIO SandBLAST ADs - EUROSPORT1 UK -->
+<!-- INICIO SandBLAST ADs - EUROSPORT1 UK -->
             
-	<!-- FIM SandBLAST ADs - EUROSPORT1 UK -->
+<!-- FIM SandBLAST ADs - EUROSPORT1 UK -->
             
-	<!-- INICIO StreamShark RESIZE  - EUROSPORT1 UK -->
-	<!-- <script type='text/javascript'>//<![CDATA[
-	(function() {
-	  // Get all video iframes from StreamShark only
-	  const iframes = document.querySelectorAll('iframe[src*="//popcdn.day/go.php?stream=Eurosport1UK"]');
-	
-	  if (iframes.length) {
-	    // Loop through all the iframes
-	    for (let i = 0; i < iframes.length; i++) {
-	      // Get the aspect ratio of the iframe, and a reference to its parent node
-	      const el = iframes[i];
-	      const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
-	      const parentNode = el.parentNode;
-	
-	      // Create a wrapper (div) element for the iframe, and set its aspect ratio
-	      const wrapper = document.createElement('div');
-	      wrapper.className = 'iframe-wrapper';
-	      wrapper.style.paddingTop = aspectRatio * 100 + '%';
-	
-	      // Insert the wrapper in front of the iframe
-	      parentNode.insertBefore(wrapper, el);
-	
-	      // Remove the iframe from the DOM, and append it to the wrapper instead
-	      el.remove();
-	      wrapper.appendChild(el);
-	
-	      // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
-	      el.removeAttribute('width');
-	      el.removeAttribute('height');
-	    }
-	  }
-	})();
-	  //]]></script> -->
-<!-- FIM StreamShark RESIZE  - EUROSPORT1 UK -->
+<!-- INICIO StreamShark RESIZE  - EUROSPORT1 UK -->                   
+<!-- <script type='text/javascript'>//<![CDATA[
+(function() {
+  // Get all video iframes from StreamShark only
+  const iframes = document.querySelectorAll('iframe[src*="//cycling.today"]');
+
+  if (iframes.length) {
+    // Loop through all the iframes
+    for (let i = 0; i < iframes.length; i++) {
+      // Get the aspect ratio of the iframe, and a reference to its parent node
+      const el = iframes[i];
+      const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
+      const parentNode = el.parentNode;
+
+      // Create a wrapper (div) element for the iframe, and set its aspect ratio
+      const wrapper = document.createElement('div');
+      wrapper.className = 'iframe-wrapper';
+      wrapper.style.paddingTop = aspectRatio * 100 + '%';
+
+      // Insert the wrapper in front of the iframe
+      parentNode.insertBefore(wrapper, el);
+
+      // Remove the iframe from the DOM, and append it to the wrapper instead
+      el.remove();
+      wrapper.appendChild(el);
+
+      // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
+      el.removeAttribute('width');
+      el.removeAttribute('height');
+    }
+  }
+})();
+  //]]></script> -->
+  <!-- FIM StreamShark RESIZE  - EUROSPORT1 UK -->
 </div>     
 <!-- FIM _______ EUROSPORT1 UK /* LINK OK */ ___________________________________________________________ -->
 
@@ -916,9 +993,9 @@ $('button').on('click', function () {
 <div id='myDIV9' style='display:none'>
     
 	<!-- <script>            
-	var valueSize = $( &quot;#iframe&quot; ).offset();
+	var valueSize = $( "#iframe" ).offset();
 	var totalsize = (valueSize.top * 2) + valueSize.left;
-		$( &quot;#iframe&quot; ).height(totalsize);            
+		$( "#iframe" ).height(totalsize);            
 	</script> -->
   			
 	<iframe allowfullscreen='allowfullscreen' class='streamshark-iframe' frameborder='0' height='620' loading='lazy' marginheight='0' marginwidth='0' scrolling='yes' src='https://racecenter.paris-nice.fr/en/' width='1000'/>
@@ -961,8 +1038,7 @@ $('button').on('click', function () {
 	  //]]></script> -->
 </div>
 <hr/>
-
-       </center>
+</center>
 
       
 <!-- FIM _______ PERFIL DAS GRANDES PROVAS /* LINK OK */ _________________________________________________ -->        
@@ -970,136 +1046,100 @@ $('button').on('click', function () {
 
 </div> 
 
-<script>
-function myFunction() {
-  var x = document.getElementById(&quot;myDIV&quot;);
-  if (x.style.display === &quot;none&quot;) {
-    x.style.display = &#39;block&#39;;;
-  } else {
-    x.style.display = &quot;none&quot;;
-  }
-}
-</script>
-<script>
-function myFunction2() {
-  var x = document.getElementById(&quot;myDIV2&quot;);
-  if (x.style.display === &quot;none&quot;) {
-    x.style.display = &quot;block&quot;;
-  } else {
-    x.style.display = &quot;none&quot;;
-  }
-}
-</script>
-<script>
-function myFunction3() {
-  var x = document.getElementById(&quot;myDIV3&quot;);
-  if (x.style.display === &quot;none&quot;) {
-    x.style.display = &quot;block&quot;;
-  } else {
-    x.style.display = &quot;none&quot;;
-  }
-}
-</script>
-<script>
-function myFunction4() {
-  var x = document.getElementById(&quot;myDIV4&quot;);
-  if (x.style.display === &quot;none&quot;) {
-    x.style.display = &quot;block&quot;;
-  } else {
-    x.style.display = &quot;none&quot;;
-  }
-}
-</script>
-<script>
-function myFunction5() {
-  var x = document.getElementById(&quot;myDIV5&quot;);
-  if (x.style.display === &quot;none&quot;) {
-    x.style.display = &quot;block&quot;;
-  } else {
-    x.style.display = &quot;none&quot;;
-  }
-}
-</script>
+    
+
+    
+        <script>
+            document.getElementById("myFunction03").addEventListener("click", function() {
+                var x = document.getElementById("myDIV3");
+                  if (x.style.display === "none") {
+                    x.style.display = "block";
+                  } else {
+                    x.style.display = "none";
+                  }
+            });
+        </script>  
+    
 <script>
 function myFunction6() {
-  var x = document.getElementById(&quot;myDIV6&quot;);
-  if (x.style.display === &quot;none&quot;) {
-    x.style.display = &quot;block&quot;;
+  var x = document.getElementById("myDIV6");
+  if (x.style.display === "none") {
+    x.style.display = "block";
   } else {
-    x.style.display = &quot;none&quot;;
+    x.style.display = "none";
   }
 }
 </script>
 <script>
 function myFunction7() {
-  var x = document.getElementById(&quot;myDIV7&quot;);
-  if (x.style.display === &quot;none&quot;) {
-    x.style.display = &quot;block&quot;;
+  var x = document.getElementById("myDIV7");
+  if (x.style.display === "none") {
+    x.style.display = "block";
   } else {
-    x.style.display = &quot;none&quot;;
+    x.style.display = "none";
   }
 }
 </script>
   <script>
 function myFunction8() {
-  var x = document.getElementById(&quot;myDIV8&quot;);
-  if (x.style.display === &quot;none&quot;) {
-    x.style.display = &quot;block&quot;;
+  var x = document.getElementById("myDIV8");
+  if (x.style.display === "none") {
+    x.style.display = "block";
   } else {
-    x.style.display = &quot;none&quot;;
+    x.style.display = "none";
   }
 }
 </script>
   <script>
 function myFunction9() {
-  var x = document.getElementById(&quot;myDIV9&quot;);
-  if (x.style.display === &quot;none&quot;) {
-    x.style.display = &quot;block&quot;;
+  var x = document.getElementById("myDIV9");
+  if (x.style.display === "none") {
+    x.style.display = "block";
   } else {
-    x.style.display = &quot;none&quot;;
+    x.style.display = "none";
   }
 }
 </script>
 	
 <script>
 function myFunction10() {
-  var x = document.getElementById(&quot;myDIV10&quot;);
-  if (x.style.display === &quot;none&quot;) {
-    x.style.display = &quot;block&quot;;
+  var x = document.getElementById("myDIV10");
+  if (x.style.display === "none") {
+    x.style.display = "block";
   } else {
-    x.style.display = &quot;none&quot;;
+    x.style.display = "none";
   }
 }
 </script>
 
   <script>
 function myFunction11() {
-  var x = document.getElementById(&quot;myDIV11&quot;);
-  if (x.style.display === &quot;none&quot;) {
-    x.style.display = &quot;block&quot;;
+  var x = document.getElementById("myDIV11");
+  if (x.style.display === "none") {
+    x.style.display = "block";
   } else {
-    x.style.display = &quot;none&quot;;
+    x.style.display = "none";
   }
 }
 </script>
 
    <script>
 function myFunction12() {
-  var x = document.getElementById(&quot;myDIV12&quot;);
-  if (x.style.display === &quot;none&quot;) {
-    x.style.display = &quot;block&quot;;
+  var x = document.getElementById("myDIV12");
+  if (x.style.display === "none") {
+    x.style.display = "block";
   } else {
-    x.style.display = &quot;none&quot;;
+    x.style.display = "none";
   }
 }
 </script>
    <script>
 function myFunction13() {
-  var x = document.getElementById(&quot;myDIV13&quot;);
-  if (x.style.display === &quot;none&quot;) {
-    x.style.display = &quot;block&quot;;
+  var x = document.getElementById("myDIV13");
+  if (x.style.display === "none") {
+    x.style.display = "block";
   } else {
-    x.style.display = &quot;none&quot;;
+    x.style.display = "none";
   }
 }
 </script>
