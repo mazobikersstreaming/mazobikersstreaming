@@ -1,1013 +1,438 @@
 
 <!DOCTYPE html>
-<html b:version='2' expr:class='"apriezthtml v2 " + data:blog.mobileClass + " " + data:blog.languageDirection' expr:dir='data:blog.languageDirection' id='apriezthtml' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta content='width=device-width,initial-scale=1' name='viewport'/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframes Control</title>
+    <style>
+        .iframe-container {
+            display: none; /* Iframes are hidden by default */
+            margin-bottom: 20px;
+        }
+        iframe {
+            width: 900px;
+            height: 640px;
+        }
+        button {
+            margin: 10px;
+        }
+        
+        .canalbutton:hover {
+          color: #14396A !important;
+          padding: 3px 10px;
+          border-radius: 5px;
+          background: #468CCF;
+          background: linear-gradient(to top, #468CCF, #2DEE67);
+        }
 
-	<b:include data='blog' name='all-head-content'/>
-	<title>
-	  <b:if cond='data:blog.pageType == "index"'>
-	    <data:blog.pageTitle/>
-	  <b:elseif cond='data:blog.pageType != "error_page"'/> 
-	    <data:blog.pageName/> | <data:blog.title/>
-		404 | <data:blog.title/> 
-	  </b:if>
-	</title>
+        .canalbutton2 {
+          font-family: arial;
+          color: #14396A !important;
+          font-size: 14px;
+          text-shadow: 1px 1px 0px #7CACDE;
+          box-shadow: 1px 1px 1px #AC39F9;
+          padding: 3px 10px;
+          border-radius: 5px;
+          border: 2px solid #3866A3;
+          background: #EEC80A;
+          background: linear-gradient(to top, #EEC80A, #CF4F30);
+        }
+        .canalbutton2:hover {
+          color: #000000 !important;
+          background: #82CF1D;
+          padding: 3px 10px;
+          border-radius: 5px;
+          background: linear-gradient(to top, #82CF1D, #EEE343);
+        }
 
-  
-<style>
-body {
-  font-family: sans-serif;
-  text-align: center;
-  padding: 3rem;
-  font-size: 1.125rem;
-  line-height: 1.5;
-  transition: all 725ms ease-in-out;
-}
+        .canalbutton3 {
+          font-family: arial;
+          color: #14396A !important;
+          font-size: 13px;
+          font-weight: 700;
+          text-shadow: 1px 1px 0px #7CACDE;
+          box-shadow: 1px 1px 1px #BEE2F9;
+          padding: 3px 10px;
+          border-radius: 5px;
+          border: 2px solid #3866A3;
+          background: #FFDA33;
+          background: linear-gradient(to top, #FFDA33, #468CCF);
+        }
+        .canalbutton3:hover {
+          color: #14396A !important;
+          padding: 3px 10px;
+          border-radius: 5px;
+          background: #FFDA33;
+          background: linear-gradient(to top, #FFDA33, #2DEE67);
+        }
 
-h1 {
-  font-size: 2rem;
-  font-weight: bolder;
-  margin-bottom: 1rem;
-}
-
-p {
-  margin-bottom: 1rem;
-  color: tomato;
-}
-
-button {
-  cursor: pointer;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  border-radius: 4px;
-  font-size: 1.25rem;
-  padding: 0.75rem 1rem;
-  border: 1px solid navy;
-  background-color: dodgerblue;
-  color: white;
-}
-
-  /* INICIO Responsive iframe using aspect-ratio property (the proper way) */ 
-
-.iframe-wrapper {
-  position: relative;
-}
-
-.iframe-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* FIM Responsive iframe using aspect-ratio property (the proper way) */
-
-/* INICIO MENU-DIV PARA STREAMING */
-#myDIVA {
-  max-width: 900px;
-  max-height: 645px;
-  padding-top:-16px;
-  text-align: center;
-  align-items: center;
-  /*margin-top: 20px;*/
-  /*background-color: rgba(255, 99, 71, 0.2);*/
-}
-
-#myDIVB {
-  max-width: 900px;
-  max-height: 645px;
-  padding-top:-16px;
-  text-align: center;
-  align-items: center;
-  visibility: hidden;
-  /*margin-top: 20px;*/
-  /*background-color: rgba(255, 99, 71, 0.2);*/
-}
-    
-#myDIV3 {
-  max-width: 900px;
-  max-height: 640px;
-  padding-top:-16px;
-  text-align: center;
-  align-items: center;
-  /*margin-top: 20px;*/
-  /*background-color: rgba(255, 99, 71, 0.2);*/
-}
-#myDIV4 {
-  max-width: 900px;
-  max-height: 640px;
-  padding-top:-16px;
-  text-align: center;
-  align-items: center;
-  /*margin-top: 20px;*/
-  /*background-color: rgba(255, 99, 71, 0.2);*/
-}
-#myDIV5 {
-  max-width: 900px;
-  max-height: 640px;
-  padding-top:-16px;
-  text-align: center;
-  align-items: center;
-  /*margin-top: 20px;*/
-  /*background-color: rgba(255, 99, 71, 0.2);*/
-}
-#myDIV6 {
-  max-width: 900px;
-  max-height: 640px;
-  padding-top:-16px;
-  text-align: center;
-  align-items: center;
-  /*margin-top: 20px;*/
-  /*background-color: rgba(255, 99, 71, 0.2);*/
-}
-#myDIV7 {
-  max-width: 900px;
-  max-height: 640px;
-  padding-top:-16px;
-  text-align: center;
-  align-items: center;
-  /*margin-top: 20px;*/
-  /*background-color: rgba(255, 99, 71, 0.2);*/
-}
-#myDIV8 {
-  max-width: 900px;
-  max-height: 640px;
-  padding-top:-16px;
-  text-align: center;
-  align-items: center;
-  /*margin-top: 20px;*/
-  /*background-color: rgba(255, 99, 71, 0.2);*/
-}
-#myDIV10 {
-  max-width: 900px;
-  max-height: 640px;
-  padding-top:-16px;
-  text-align: center;
-  align-items: center;
-  /*margin-top: 20px;*/
-  /*background-color: rgba(255, 99, 71, 0.2);*/
-}
-#myDIV11 {
-  max-width: 900px;
-  max-height: 640px;
-  padding-top:-16px;
-  text-align: center;
-  align-items: center;
-  /*margin-top: 20px;*/
-  /*background-color: rgba(255, 99, 71, 0.2);*/
-}
-#myDIV12 {
-  max-width: 900px;
-  max-height: 640px;
-  padding-top:-16px;
-  text-align: center;
-  align-items: center;
-  /*margin-top: 20px;*/
-  /*background-color: rgba(255, 99, 71, 0.2);*/
-}
-#myDIV13 {
-  max-width: 900px;
-  max-height: 640px;
-  padding-top:-16px;
-  text-align: center;
-  align-items: center;
-  /*margin-top: 20px;*/
-  /*background-color: rgba(255, 99, 71, 0.2);*/
-}
-#myDIV9 {
-  max-width: 1000px;
-  max-height: 635px;
-  padding-top:-16px;
-  text-align: center;
-  align-items: center;
-  /*margin-top: 20px;*/
-  /*background-color: rgba(255, 99, 71, 0.2);*/
-}
-
-.canalbutton {
-  font-family: arial;
-  color: #14396A !important;
-  font-size: 13px;
-  font-weight: 700;
-  text-shadow: 1px 1px 0px #7CACDE;
-  box-shadow: 1px 1px 1px #BEE2F9;
-  padding: 3px 10px;
-  border-radius: 5px;
-  border: 2px solid #3866A3;
-  background: #63B8EE;
-  background: linear-gradient(to top, #63B8EE, #468CCF);
-}
-.canalbutton:hover {
-  color: #14396A !important;
-  padding: 3px 10px;
-  border-radius: 5px;
-  background: #468CCF;
-  background: linear-gradient(to top, #468CCF, #2DEE67);
-}
-
-.canalbutton2 {
-  font-family: arial;
-  color: #14396A !important;
-  font-size: 14px;
-  text-shadow: 1px 1px 0px #7CACDE;
-  box-shadow: 1px 1px 1px #AC39F9;
-  padding: 3px 10px;
-  border-radius: 5px;
-  border: 2px solid #3866A3;
-  background: #EEC80A;
-  background: linear-gradient(to top, #EEC80A, #CF4F30);
-}
-.canalbutton2:hover {
-  color: #000000 !important;
-  background: #82CF1D;
-  padding: 3px 10px;
-  border-radius: 5px;
-  background: linear-gradient(to top, #82CF1D, #EEE343);
-}
-
-.canalbutton3 {
-  font-family: arial;
-  color: #14396A !important;
-  font-size: 13px;
-  font-weight: 700;
-  text-shadow: 1px 1px 0px #7CACDE;
-  box-shadow: 1px 1px 1px #BEE2F9;
-  padding: 3px 10px;
-  border-radius: 5px;
-  border: 2px solid #3866A3;
-  background: #FFDA33;
-  background: linear-gradient(to top, #FFDA33, #468CCF);
-}
-.canalbutton3:hover {
-  color: #14396A !important;
-  padding: 3px 10px;
-  border-radius: 5px;
-  background: #FFDA33;
-  background: linear-gradient(to top, #FFDA33, #2DEE67);
-}
-
-.iframe-container {
-  overflow: hidden;
-  padding-top: 80%;
-  position: relative;
-}
-
-.iframe-container iframe {
-  border: 0;
-  width: 920px;
-  height: 780px;
-  left: 20px;
-  position: absolute;
-  top: -250px;
-  overflow: hidden;
-}
-
-/* INICIO CONTAINER IFRAME DE VIDEO - RESPONSIVO*/
-
-[style*="--aspect-ratio"] > :first-child {
-  width: 100%;
-}
-[style*="--aspect-ratio"] > img {  
-  height: auto;
-} 
-@supports (--custom:property) {
-  [style*="--aspect-ratio"] {
-    position: relative;
-  }
-  [style*="--aspect-ratio"]::before {
-    content: "";
-    display: block;
-    padding-bottom: calc(100% / (var(--aspect-ratio)));
-  }  
-  [style*="--aspect-ratio"] > :first-child {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-  }  
-}
-	
-/* FIM CONTAINER IFRAME DE VIDEO - RESPONSIVO */
-
-  /* FIM MENU-DIV PARA STREAMING */
-  
-</style>
-
-<!-- <script>
-  window.console = window.console || function(t) {};
-</script> -->
-
-<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-    
-<script src="https://github.com/mazobikersstreaming/mazobikersstreaming/blob/main/sandblaster.js"></script> 
-
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js'/>
-  
+    </style>
+    <script src="https://github.com/mazobikersstreaming/mazobikersstreaming/blob/main/sandblaster.js"></script> 
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js'/></script> 
 </head>
-
-<body expr:class='data:blog.pageType' id='webpage' itemscope='' itemtype='http://schema.org/WebPage'>
-	<div class='body-area' id='body-area'>
-	<div class='container-outer'>
-	<div expr:class='(data:blog.url == data:blog.homepageUrl ? "home-area" : data:blog.pageType in {"static_page", "item"} ? "item-area" : "index-area")+ " container"' id='container'>
-
-	<script type='text/javascript'>
-	//<![CDATA[    
-	var d = document.getElementById("webpage");d.className = d.className + " loadinghtml js-support";
-	cookieChoices = {};
-	//]]>
-	</script>>
-
-	<!--      <script id="rendered-js" >
-$('button').on('click', function () {
-  $('p').css('opacity', 0);
-});
-//# sourceURL=pen.js
-    </script> -->
-<!-- --------------------###------------------ -->
-
-<!-- INICIO NOVO DISPLAY COM MENU DE OPCAO DE STREAMING IPTV PARA ASSITIR -->	
-<center> 
-
-<div style='background-color: rgba(255, 99, 71, 0.2)'>
-	<hr/>
-     	<!-- ---INICIO BANNER PROVAS--------------------------------------------------------------------------- -->
-
-		<center>
-		<div id='contentbanner'>
-			<img height='100%' onmouseout='this.src=&apos;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCUiKrwX-Vdof4Yu44eEQ_Vl-DlMZ7kZIn8hwMS00nDRHaXq0bt6hl_nUDG8O_JhFIsAMOhw8IXg958Pg-iWr4k6DyvhMrEGlvLH3adM192iUnHR3uEDowfn33_q5XJGe912sz9lTDpE4xdU6V9W39xHH2sh-qaacNO1-rI0eEqRRcuBFaK3Qi00EFGaqx/s2310/parisnice_top.webp&apos;' onmouseover='this.src=&apos;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCPqDXMsoXZwXFETnMbOtEBeTVUMfP6jf3dUGXIKoQ99ipBLwJApn6exBEemOBNeApBEg85Ssd2V9V-8N6m84s9T1_QTUt4DJKwDFZyKNL6A5wZB62bK0e7uA8XTK02HA69Ad0n4_DYK4r5Pk-I8AwFRFgrXQmISR5X_k2e9bEjtyAKERY9Torg9JJ46Um/s2310/parisnice_full.webp&apos;' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCUiKrwX-Vdof4Yu44eEQ_Vl-DlMZ7kZIn8hwMS00nDRHaXq0bt6hl_nUDG8O_JhFIsAMOhw8IXg958Pg-iWr4k6DyvhMrEGlvLH3adM192iUnHR3uEDowfn33_q5XJGe912sz9lTDpE4xdU6V9W39xHH2sh-qaacNO1-rI0eEqRRcuBFaK3Qi00EFGaqx/s2310/parisnice_top.webp' style='width: 100%; object-fit: contain; max-width:1200px;'/>
-     		</div>
-		<!-- INICIO TIMER PARA BANNER DAS PROVAS -->
-			 <script type='text/javascript'>//<![CDATA[
-		        	// Get the current date
-		        	var currentDate = new Date();
-		
-		       		// Define the start and end dates of the desired range
-		        	var startDate = new Date("2024-02-29");
-		        	var endDate = new Date("2024-03-10");
-		
-		        	// Check if the current date is within the specified range
-		        	if (currentDate >= startDate && currentDate <= endDate) {
-		            // Content is within the date range, so display it
-		            document.getElementById("contentbanner").style.display = "block";
-		        	} else {
-		            // Content is outside the date range, so hide it
-		            document.getElementById("contentbanner").style.display = "none";
-		        }//]]></script>
-		</center>
-		<!-- INICIO TIMER PARA BANNER DAS PROVAS -->
-	
-	<!-- ---FIM BANNER PROVAS------------------------------------------------------------------------------ -->
-    
-    <!-- INICIO BOTOES DAS STREAMINGS------------------------------------------------------------------------------ -->
+<body>
 <center>
-	    <p>Através destas fontes você consegue acompanhar as principais provas do ciclismo mundial!</p>
-    	<p>Clique em uma das Opções de Streaming para assistir...</p>
-    	<p> </p>
-	
-	<div style='max-width: 1000px;'>
-	
-		<button class='canalbutton' id='myFunctionA'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpDqF8DZJw6baQxTd_nHrcxI6SeNB9WFQB1A4N8V_wl63Lh9mxaXmm-8XQ8DOlvZBL6WVPTEchQV5oVV3O_68ivaOShkdZRsTJDW_7kcHJKL_LQu4nkZjzSj5L8eB4kcuuB0LdEgeO6Mmn2mfuqQTInYYblvNtixT5BQmmVEEsoQISQTCyyN3oaowffg/s391/CYCLINGTODAY.png' style='height: 20px;'/>-Audio:ENG.</button><a> </a>
-                <script>
-            document.getElementById('myFunctionA').addEventListener('click', function() {
-                var x = document.getElementById('myDIVA');
-                  if (x.style.display === 'none') {
-                    x.style.display = 'block';
-                  } else {
-                    x.style.display = 'none';
-                  }
-            });
-        </script>
+    <h1>Control Iframes</h1>
+    
+    <!--BOTOES PARA TROCA DE CANAIS -->
+    <div>
+    
+        <button class='canalbutton2' onclick="toggleIframe('iframe1')"><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpDqF8DZJw6baQxTd_nHrcxI6SeNB9WFQB1A4N8V_wl63Lh9mxaXmm-8XQ8DOlvZBL6WVPTEchQV5oVV3O_68ivaOShkdZRsTJDW_7kcHJKL_LQu4nkZjzSj5L8eB4kcuuB0LdEgeO6Mmn2mfuqQTInYYblvNtixT5BQmmVEEsoQISQTCyyN3oaowffg/s391/CYCLINGTODAY.png' style='height: 20px;'/>-Audio:ENG.</button>
         
-		<button class='canalbutton' id='myFunctionB'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>-Audio:ENG.</button><a> </a>
-                <script>
-            document.getElementById('myFunctionB').addEventListener('click', function() {
-                var x = document.getElementById('myDIVB');
-                  if (x.style.display === 'none') {
-                    x.style.display = 'block';
-                  } else {
-                    x.style.display = 'none';
-                  }
-            });
-        </script>
+        <button class='canalbutton3' onclick="toggleIframe('iframe2')"><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>-Audio:ENG.</button></button>
         
+        <button class='canalbutton3' onclick="toggleIframe('iframe3')"><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>-Audio:ESP.</button>
         
+        <button class='canalbutton3' onclick="toggleIframe('iframe4')"><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>-Audio:POR.</button>
+        
+        <button class='canalbutton3' onclick="toggleIframe('iframe5')"><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>-Audio:ENG.</button>
+        
+        <button class='canalbutton3' onclick="toggleIframe('iframe6')"><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>-Audio:ESP.</button>
+        
+        <button class='canalbutton3' onclick="toggleIframe('iframe7')"><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>-Audio:POR.</button>
+        
+        <button class='canalbutton3' onclick="toggleIframe('iframe8')"><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAM5WyxKNzXSfDScHtj49Mr9NliSXN-gdCtxr38uvj7oIABoQN6aBii08yXO8TFP2LovSgJaA2d0eyxXjyjSGJuvaNcX0VxrXjMu3nSRGpvlIFqJx9gE6-628GCq4le7vyG7gZLhdbWdi7ptxsLOBFX3FNpQnZ83k2nRdr0lxN3Y8-GMILTUE-Pjek8g/s391/ESPN1.png' style='height: 20px;'/>-Audio:BR..</button>
+        
+        <button class='canalbutton' onclick="toggleIframe('iframe9')"><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWJaiCiamwdK5jDliUy6ZPPhomitdofvMV591BLx7owodvJFOfWXV34CzONF2ImfDTHM6RHjh-Z5RXJVShHsdvPX8iPuzl-7YzPY6DP0__8ovTdeRa_FnSlKzoJy4BiKsQFKhg-dOeXTUFfGGYF65itGCOb3W5dzoMtqSfTG_S_hZXJvdLzOBN08kifA/s391/ESPN2.png' style='height: 20px;'/>-Audio:BR..</button>
+        
+        <button class='canalbutton' onclick="toggleIframe('iframe10')">CANAL 10</button>
+    </div>
+    
+    <!-- Iframes dos canais -->
+    <div id="iframe1" class="iframe-container">
+    	
+        <a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpDqF8DZJw6baQxTd_nHrcxI6SeNB9WFQB1A4N8V_wl63Lh9mxaXmm-8XQ8DOlvZBL6WVPTEchQV5oVV3O_68ivaOShkdZRsTJDW_7kcHJKL_LQu4nkZjzSj5L8eB4kcuuB0LdEgeO6Mmn2mfuqQTInYYblvNtixT5BQmmVEEsoQISQTCyyN3oaowffg/s391/CYCLINGTODAY.png' style='height: 20px;'/>Audio:.ENGLISH..</a><br>
+         
+         <iframe allowfullscreen='' class='streamshark-iframe' frameborder='0'src='https://tiz-cycling-live.io/livestream.php'/>
+    </div>
 
-        
-		<button class="canalbutton" id="myFunction03"><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>-Audio:ESP.</button><a> </a>
-        
-		<button class="canalbutton" id="myFunction10"><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>-Audio:POR.</button><a> </a>
-        <script>
-            document.getElementById("myFunction10").addEventListener("click", function() {
-                var x = document.getElementById("myDIV10");
-                  if (x.style.display === "none") {
-                    x.style.display = "block";
-                  } else {
-                    x.style.display = "none";
-                  }
-            });
-        </script>    
-        
-		<button class='canalbutton' id="myFunction04"><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>-Audio:ENG.</button><a> </a>
-        <script>
-            document.getElementById("myFunction04").addEventListener("click", function() {
-                var x = document.getElementById("myDIV4");
-                  if (x.style.display === "none") {
-                    x.style.display = "block";
-                  } else {
-                    x.style.display = "none";
-                  }
-            });
-        </script>
-        
-		<button class='canalbutton' id="myFunction05"><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>-Audio:ESP.</button><a> </a>
-       <script>
-            document.getElementById("myFunction05").addEventListener("click", function() {
-                var x = document.getElementById("myDIV5");
-                  if (x.style.display === "none") {
-                    x.style.display = "block";
-                  } else {
-                    x.style.display = "none";
-                  }
-            });
-        </script>
-        
-		<button class='canalbutton' onclick='myFunction11()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>-Audio:POR.</button><a> </a>
-        <script>
-            document.getElementById("myFunction11").addEventListener("click", function() {
-                var x = document.getElementById("myDIV11");
-                  if (x.style.display === "none") {
-                    x.style.display = "block";
-                  } else {
-                    x.style.display = "none";
-                  }
-            });
-        </script>
-        
-		<button class='canalbutton' onclick='myFunction6()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAM5WyxKNzXSfDScHtj49Mr9NliSXN-gdCtxr38uvj7oIABoQN6aBii08yXO8TFP2LovSgJaA2d0eyxXjyjSGJuvaNcX0VxrXjMu3nSRGpvlIFqJx9gE6-628GCq4le7vyG7gZLhdbWdi7ptxsLOBFX3FNpQnZ83k2nRdr0lxN3Y8-GMILTUE-Pjek8g/s391/ESPN1.png' style='height: 20px;'/>-Audio:BR..</button><a> </a>
-		<button class='canalbutton' onclick='myFunction7()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWJaiCiamwdK5jDliUy6ZPPhomitdofvMV591BLx7owodvJFOfWXV34CzONF2ImfDTHM6RHjh-Z5RXJVShHsdvPX8iPuzl-7YzPY6DP0__8ovTdeRa_FnSlKzoJy4BiKsQFKhg-dOeXTUFfGGYF65itGCOb3W5dzoMtqSfTG_S_hZXJvdLzOBN08kifA/s391/ESPN2.png' style='height: 20px;'/>-Audio:BR..</button><a> </a>
-		<button class='canalbutton' onclick='myFunction8()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHoWrwVzxFKPFSaPLsgXYVIh1Nd6F71jTm5T195uOChumUYs0Jl61eNyyht9v1mlXwvLe9mu8ZtmXkcwQ-C2DAA3VRWDvlIUi-ov2Ua5NFG-eHRA53VP67RCeoGb9SR6nTbLI94NKt9QbsFPfLha_a7MGicDp4Q08KjA-04cBF3pjr8rX4IyjcCMTCDQ/s391/ESPN3.png' style='height: 20px;'/>-Audio:BR..</button><a> </a>
-		<button class='canalbutton' onclick='myFunction12()'><img alt='Image' src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Rede_Minas_logo.png/799px-Rede_Minas_logo.png' style='height: 20px;'/>-Audio:BR..</button><a> </a>
-		<button class='canalbutton' onclick='myFunction13()'><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJOMHv-gzyHsEuprqbrm1seupjcJ74vkxHUYYXHnp6IesaQAipZNd39MFjjVKmdwpzs3rj4BsPryiXWjMDFwIiZ3wJj0is-h9vsr-wYigiUHb-UKePSj-RjvXHxniqMMJT-c3eLt_wYmY7ATRWx0NK0EIuXPxHh39Aw2wMU9xF1Q2maALnCu3FAZpmto9C/s391/RTP1.png' style='height: 20px;'/>-Audio:POR.</button><a> </a>
-		<button class='canalbutton2' onclick='myFunction9()'>.____SIGA A CORRIDA AO VIVO___.</button><a> </a>
-	
-	</div>
-	        <p> </p>
-		<p> </p>
-	</center> 
-
-    <!-- FIM BOTOES DAS STREAMINGS------------------------------------------------------------------------------ -->
-  
-<!-- INICIO JANELAS DE STREAMING------------------------------------------------------------------------------ -->
-  
-	<hr/>
-		
-		<center>
-<!-- INICIO _______ cycling.today /* LINK OK */ ___________________________________________________________ -->
-<div id='myDIVA' style='display:none;'>
-	<a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpDqF8DZJw6baQxTd_nHrcxI6SeNB9WFQB1A4N8V_wl63Lh9mxaXmm-8XQ8DOlvZBL6WVPTEchQV5oVV3O_68ivaOShkdZRsTJDW_7kcHJKL_LQu4nkZjzSj5L8eB4kcuuB0LdEgeO6Mmn2mfuqQTInYYblvNtixT5BQmmVEEsoQISQTCyyN3oaowffg/s391/CYCLINGTODAY.png' style='height: 20px;'/>Audio:.ENGLISH..</a>
-         <!-- Tizcycling/CyclingToday /* LINK OK */  OBS: SUBSTITUIR "&" POR "&amp;" NOS LINKS -->
-          <iframe allowfullscreen='' class='streamshark-iframe' frameborder='0' height='620' src='https://cycling.today/live-streaming/' width='900'/>
-                   
-<!-- <script type='text/javascript'>//<![CDATA[
-(function() {
-  // Get all video iframes from StreamShark only
-  const iframes = document.querySelectorAll('iframe[src*="//cycling.today"]');
-
-  if (iframes.length) {
-    // Loop through all the iframes
-    for (let i = 0; i < iframes.length; i++) {
-      // Get the aspect ratio of the iframe, and a reference to its parent node
-      const el = iframes[i];
-      const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
-      const parentNode = el.parentNode;
-
-      // Create a wrapper (div) element for the iframe, and set its aspect ratio
-      const wrapper = document.createElement('div');
-      wrapper.className = 'iframe-wrapper';
-      wrapper.style.paddingTop = aspectRatio * 100 + '%';
-
-      // Insert the wrapper in front of the iframe
-      parentNode.insertBefore(wrapper, el);
-
-      // Remove the iframe from the DOM, and append it to the wrapper instead
-      el.remove();
-      wrapper.appendChild(el);
-
-      // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
-      el.removeAttribute('width');
-      el.removeAttribute('height');
-    }
-  }
-})();
-  //]]></script> -->
-</div>
-<!-- FIM _______ cycling.today /* LINK OK */ ___________________________________________________________ -->     
-      
-<!-- INICIO _______ EUROSPORT1 UK /* LINK OK */ ___________________________________________________________ -->
-<div id='myDIVB' style='display:none;'>
-	<a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>Audio:.ENGLISH..</a>
-         <!-- Tizcycling/CyclingToday /* LINK OK */  OBS: SUBSTITUIR "&" POR "&amp;" NOS LINKS -->
-          <iframe allowfullscreen='' class='streamshark-iframe' frameborder='0' height='620' sandbox='allow-scripts' src='https://popcdn.day/go.php?stream=Eurosport1UK' width='900'/>
-
-<!-- INICIO SandBLAST ADs - EUROSPORT1 UK -->
+    <!-- DIV iframe2 = EUROSPORT1 INGLES -->
+    <div id="iframe2" class="iframe-container">
+    	    <a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpDqF8DZJw6baQxTd_nHrcxI6SeNB9WFQB1A4N8V_wl63Lh9mxaXmm-8XQ8DOlvZBL6WVPTEchQV5oVV3O_68ivaOShkdZRsTJDW_7kcHJKL_LQu4nkZjzSj5L8eB4kcuuB0LdEgeO6Mmn2mfuqQTInYYblvNtixT5BQmmVEEsoQISQTCyyN3oaowffg/s391/CYCLINGTODAY.png' style='height: 20px;'/>Audio:.ENGLISH..</a><br>
+          
+          <iframe class='streamshark-iframe' sandbox="allow-scripts" scrolling='no' src="//popcdn.day/go.php?stream=Eurosport1UK"></iframe>
+          
+          <!-- Sandblaster Sandbox iframe cleaner  - EUROSPORT1 UK -->
+          <script src="https://github.com/mazobikersstreaming/mazobikersstreaming/blob/main/sandblaster.js"></script> 
             
-<!-- FIM SandBLAST ADs - EUROSPORT1 UK -->
-            
-<!-- INICIO StreamShark RESIZE  - EUROSPORT1 UK -->                   
-<!-- <script type='text/javascript'>//<![CDATA[
-(function() {
-  // Get all video iframes from StreamShark only
-  const iframes = document.querySelectorAll('iframe[src*="//cycling.today"]');
+          <!-- INICIO StreamShark RESIZE  - EUROSPORT1 UK -->
+          <script type='text/javascript'>//<![CDATA[
+            (function() {
+              // Get all video iframes from StreamShark only
+              const iframes = document.querySelectorAll('iframe[src*="//popcdn.day/go.php?stream=Eurosport1UK"]');
 
-  if (iframes.length) {
-    // Loop through all the iframes
-    for (let i = 0; i < iframes.length; i++) {
-      // Get the aspect ratio of the iframe, and a reference to its parent node
-      const el = iframes[i];
-      const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
-      const parentNode = el.parentNode;
+              if (iframes.length) {
+                // Loop through all the iframes
+                for (let i = 0; i < iframes.length; i++) {
+                  // Get the aspect ratio of the iframe, and a reference to its parent node
+                  const el = iframes[i];
+                  const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
+                  const parentNode = el.parentNode;
 
-      // Create a wrapper (div) element for the iframe, and set its aspect ratio
-      const wrapper = document.createElement('div');
-      wrapper.className = 'iframe-wrapper';
-      wrapper.style.paddingTop = aspectRatio * 100 + '%';
+                  // Create a wrapper (div) element for the iframe, and set its aspect ratio
+                  const wrapper = document.createElement('div');
+                  wrapper.className = 'iframe-wrapper';
+                  wrapper.style.paddingTop = aspectRatio * 100 + '%';
 
-      // Insert the wrapper in front of the iframe
-      parentNode.insertBefore(wrapper, el);
+                  // Insert the wrapper in front of the iframe
+                  parentNode.insertBefore(wrapper, el);
 
-      // Remove the iframe from the DOM, and append it to the wrapper instead
-      el.remove();
-      wrapper.appendChild(el);
+                  // Remove the iframe from the DOM, and append it to the wrapper instead
+                  el.remove();
+                  wrapper.appendChild(el);
 
-      // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
-      el.removeAttribute('width');
-      el.removeAttribute('height');
-    }
-  }
-})();
-  //]]></script> -->
-  <!-- FIM StreamShark RESIZE  - EUROSPORT1 UK -->
-</div>     
-<!-- FIM _______ EUROSPORT1 UK /* LINK OK */ ___________________________________________________________ -->
+                  // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
+                  el.removeAttribute('width');
+                  el.removeAttribute('height');
+                }
+              }
+            })();
+              //]]></script>
 
-<!-- INICIO _______ EUROSPORT1 ESP/* LINK OK */ ___________________________________________________________ -->
-<div id='myDIV3' style='display:none'>
-	<a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>Audio:.SPANISH..</a>
-	<iframe allowfullscreen='' class='streamshark-iframe' do-not-allow='autoplay' frameborder='no' height='620' sandbox='allow-scripts' src='//popcdn.day/go.php?stream=EURO1ES' width='900'/>
-	
-	<!-- INICIO SandBLAST ADs - EUROSPORT1 ES -->
-	            
-	<!-- FIM SandBLAST ADs - EUROSPORT1 ES -->
-	            
-	<!-- INICIO StreamShark RESIZE  - EUROSPORT1 ES -->
-	            
-	<!-- <script type='text/javascript'>//<![CDATA[
-	(function() {
-	  // Get all video iframes from StreamShark only
-	  const iframes = document.querySelectorAll('iframe[src*="//popcdn.day/go.php?stream=EURO1ES"]');
-	
-	  if (iframes.length) {
-	    // Loop through all the iframes
-	    for (let i = 0; i < iframes.length; i++) {
-	      // Get the aspect ratio of the iframe, and a reference to its parent node
-	      const el = iframes[i];
-	      const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
-	      const parentNode = el.parentNode;
-	
-	      // Create a wrapper (div) element for the iframe, and set its aspect ratio
-	      const wrapper = document.createElement('div');
-	      wrapper.className = 'iframe-wrapper';
-	      wrapper.style.paddingTop = aspectRatio * 100 + '%';
-	
-	      // Insert the wrapper in front of the iframe
-	      parentNode.insertBefore(wrapper, el);
-	
-	      // Remove the iframe from the DOM, and append it to the wrapper instead
-	      el.remove();
-	      wrapper.appendChild(el);
-	
-	      // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
-	      el.removeAttribute('width');
-	      el.removeAttribute('height');
-	    }
-	  }
-	})();
-	  //]]></script> -->
-	<!-- FIM StreamShark RESIZE - EUROSPORT1 ES -->
-</div>
-<!-- FIM _______ EUROSPORT 1 ESP/* LINK OK */ ________________________________________________________ -->
+        <!-- FIM StreamShark RESIZE  - EUROSPORT1 UK -->
+    </div>
 
-<!-- INICIO _______ EUROSPORT 1 POR-PT /* LINK OK */ ______________________  -->
+    <!-- DIV iframe3 = EUROSPORT1 ESPANHOL -->
+    <div id="iframe3" class="iframe-container">
+        <a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>Audio:.SPANISH..</a><br>
+      	
+        <iframe class='streamshark-iframe' sandbox='allow-scripts' scrolling='no' src='//popcdn.day/go.php?stream=EURO1ES'/>
 
-<div id='myDIV10' style='display:none'>
-	<a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>Audio:.PORT-PORTUGAL..</a>
-	<iframe allowfullscreen='' class='streamshark-iframe' do-not-allow='autoplay' frameborder='no' height='620' sandbox='allow-scripts' scrolling='no' src='//popcdn.day/go.php?stream=EURO1PT' width='900'/>
-	  
-	<!-- INICIO SandBLAST ADs - EUROSPORT1 PT-PT -->
-	            
-	<!-- FIM SandBLAST ADs - EUROSPORT1 PT-PT -->
-	            
-	<!-- INICIO StreamShark RESIZE  - EUROSPORT1 PT-PT -->
-	<!-- <script type='text/javascript'>//<![CDATA[
-	(function() {
-	  // Get all video iframes from StreamShark only
-	  const iframes = document.querySelectorAll('iframe[src*="//popcdn.day/go.php?stream=EURO1PT"]');
-	
-	  if (iframes.length) {
-	    // Loop through all the iframes
-	    for (let i = 0; i < iframes.length; i++) {
-	      // Get the aspect ratio of the iframe, and a reference to its parent node
-	      const el = iframes[i];
-	      const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
-	      const parentNode = el.parentNode;
-	
-	      // Create a wrapper (div) element for the iframe, and set its aspect ratio
-	      const wrapper = document.createElement('div');
-	      wrapper.className = 'iframe-wrapper';
-	      wrapper.style.paddingTop = aspectRatio * 100 + '%';
-	
-	      // Insert the wrapper in front of the iframe
-	      parentNode.insertBefore(wrapper, el);
-	
-	      // Remove the iframe from the DOM, and append it to the wrapper instead
-	      el.remove();
-	      wrapper.appendChild(el);
-	
-	      // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
-	      el.removeAttribute('width');
-	      el.removeAttribute('height');
-	    }
-	  }
-	})();
-	  //]]></script> -->
-          <!-- FIM StreamShark RESIZE - EUROSPORT1 PT-PT -->
-</div>
-<!-- FIM _______ EUROSPORT POR-PT/* LINK OK */ ________________________________________________________ -->
+        <!-- Sandblaster Sandbox iframe cleaner  - EUROSPORT1 ES -- >
+          <script src="https://github.com/mazobikersstreaming/mazobikersstreaming/blob/main/sandblaster.js"></script> 
 
-<!-- INICIO _CANAL 4______ EUROSPORT2  ENG /* LINK OK */ _________________________________________________ -->
-<div id='myDIV4' style='display:none'>
-	<a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>Audio:.ENGLISH..</a>
-	<iframe allowfullscreen='' class='streamshark-iframe' do-not-allow='autoplay' frameborder='no' height='620' sandbox='allow-scripts' scrolling='no' src='//popcdn.day/go.php?stream=Eurosport2UK' width='900'/>
-	  
-	<!-- INICIO SandBLAST ADs - EUROSPORT2 UK -->
-	            
-	<!-- FIM SandBLAST ADs - EUROSPORT2 UK -->
-	            
-	<!-- INICIO StreamShark RESIZE  - EUROSPORT2 UK -->
-	<!-- <script type='text/javascript'>//<![CDATA[
-	(function() {
-	  // Get all video iframes from StreamShark only
-	  const iframes = document.querySelectorAll('iframe[src*="//popcdn.day/go.php?stream=Eurosport2UK"]');
-	
-	  if (iframes.length) {
-	    // Loop through all the iframes
-	    for (let i = 0; i < iframes.length; i++) {
-	      // Get the aspect ratio of the iframe, and a reference to its parent node
-	      const el = iframes[i];
-	      const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
-	      const parentNode = el.parentNode;
-	
-	      // Create a wrapper (div) element for the iframe, and set its aspect ratio
-	      const wrapper = document.createElement('div');
-	      wrapper.className = 'iframe-wrapper';
-	      wrapper.style.paddingTop = aspectRatio * 100 + '%';
-	
-	      // Insert the wrapper in front of the iframe
-	      parentNode.insertBefore(wrapper, el);
-	
-	      // Remove the iframe from the DOM, and append it to the wrapper instead
-	      el.remove();
-	      wrapper.appendChild(el);
-	
-	      // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
-	      el.removeAttribute('width');
-	      el.removeAttribute('height');
-	    }
-	  }
-	})();
-	  //]]></script> -->
+      	<!-- INICIO StreamShark RESIZE  - EUROSPORT1 ES -->
+        <script type='text/javascript'>//<![CDATA[
+      	(function() {
+      	  // Get all video iframes from StreamShark only
+      	  const iframes = document.querySelectorAll('iframe[src*="//popcdn.day/go.php?stream=EURO1ES"]');
+      	
+      	  if (iframes.length) {
+      	    // Loop through all the iframes
+      	    for (let i = 0; i < iframes.length; i++) {
+      	      // Get the aspect ratio of the iframe, and a reference to its parent node
+      	      const el = iframes[i];
+      	      const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
+      	      const parentNode = el.parentNode;
+      	
+      	      // Create a wrapper (div) element for the iframe, and set its aspect ratio
+      	      const wrapper = document.createElement('div');
+      	      wrapper.className = 'iframe-wrapper';
+      	      wrapper.style.paddingTop = aspectRatio * 100 + '%';
+      	
+      	      // Insert the wrapper in front of the iframe
+      	      parentNode.insertBefore(wrapper, el);
+      	
+      	      // Remove the iframe from the DOM, and append it to the wrapper instead
+      	      el.remove();
+      	      wrapper.appendChild(el);
+      	
+      	      // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
+      	      el.removeAttribute('width');
+      	      el.removeAttribute('height');
+      	    }
+      	  }
+      	})();
+      	  //]]></script>
+      	<!-- FIM StreamShark RESIZE - EUROSPORT1 ES -->
+    </div>
+    
+    <!-- DIV iframe4 = EUROSPORT1 PORTUGAL -->
+    <div id="iframe4" class="iframe-container">
+        <a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs7UohPLs89RHaTT8woiRDJ0HOx1ocgKHG3B5LTe_Lhc-Dmf7OkVlXGms1RCw6iYs-Rrz09WJZw26WfXPIdXjdduFIJGURFyhpmCvF9eJjfC-ypYTeKmgDw5GcxW4XkPdX3wxtZpF2HT-yr8njz2gCEiJYglvGzQrumo2tjo6v5idlQ5Fx25aLvoBPew/s391/EUROSPORT1.png' style='height: 20px;'/>Audio:.PORT-PORTUGAL..</a><br>
+      	
+        <iframe class='streamshark-iframe' sandbox='allow-scripts' scrolling='no' src='//popcdn.day/go.php?stream=EURO1PT' />
+        
+        <!-- Sandblaster Sandbox iframe cleaner  - EUROSPORT1 PT -->
+          <script src="https://github.com/mazobikersstreaming/mazobikersstreaming/blob/main/sandblaster.js"></script> 
+      	<!-- INICIO StreamShark RESIZE  - EUROSPORT1 PT-PT -->
+      	<script type='text/javascript'>//<![CDATA[
+      	(function() {
+      	  // Get all video iframes from StreamShark only
+      	  const iframes = document.querySelectorAll('iframe[src*="//popcdn.day/go.php?stream=EURO1PT"]');
+      	
+      	  if (iframes.length) {
+      	    // Loop through all the iframes
+      	    for (let i = 0; i < iframes.length; i++) {
+      	      // Get the aspect ratio of the iframe, and a reference to its parent node
+      	      const el = iframes[i];
+      	      const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
+      	      const parentNode = el.parentNode;
+      	
+      	      // Create a wrapper (div) element for the iframe, and set its aspect ratio
+      	      const wrapper = document.createElement('div');
+      	      wrapper.className = 'iframe-wrapper';
+      	      wrapper.style.paddingTop = aspectRatio * 100 + '%';
+      	
+      	      // Insert the wrapper in front of the iframe
+      	      parentNode.insertBefore(wrapper, el);
+      	
+      	      // Remove the iframe from the DOM, and append it to the wrapper instead
+      	      el.remove();
+      	      wrapper.appendChild(el);
+      	
+      	      // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
+      	      el.removeAttribute('width');
+      	      el.removeAttribute('height');
+      	    }
+      	  }
+      	})();
+      	  //]]></script>
+                <!-- FIM StreamShark RESIZE - EUROSPORT1 PT-PT -->
+       </div>
+
+    <!-- DIV iframe5 = EUROSPORT2 INGLES -->
+    <div id="iframe5" class="iframe-container">
+        <a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>Audio:.ENGLISH..</a><br>
+
+        <iframe class='streamshark-iframe' sandbox='allow-scripts' scrolling='no' src='//popcdn.day/go.php?stream=Eurosport2UK'/><br>
+
+        <!-- Sandblaster Sandbox iframe cleaner  - EUROSPORT2 UK -->
+        <script src="https://github.com/mazobikersstreaming/mazobikersstreaming/blob/main/sandblaster.js"></script> 
+
+        <!-- INICIO StreamShark RESIZE  - EUROSPORT2 UK -->
+        <script type='text/javascript'>//<![CDATA[
+        (function() {
+          // Get all video iframes from StreamShark only
+          const iframes = document.querySelectorAll('iframe[src*="//popcdn.day/go.php?stream=Eurosport2UK"]');
+
+          if (iframes.length) {
+            // Loop through all the iframes
+            for (let i = 0; i < iframes.length; i++) {
+              // Get the aspect ratio of the iframe, and a reference to its parent node
+              const el = iframes[i];
+              const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
+              const parentNode = el.parentNode;
+
+              // Create a wrapper (div) element for the iframe, and set its aspect ratio
+              const wrapper = document.createElement('div');
+              wrapper.className = 'iframe-wrapper';
+              wrapper.style.paddingTop = aspectRatio * 100 + '%';
+
+              // Insert the wrapper in front of the iframe
+              parentNode.insertBefore(wrapper, el);
+
+              // Remove the iframe from the DOM, and append it to the wrapper instead
+              el.remove();
+              wrapper.appendChild(el);
+
+              // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
+              el.removeAttribute('width');
+              el.removeAttribute('height');
+            }
+          }
+          })();
+          //]]></script>
           <!-- FIM StreamShark RESIZE - EUROSPORT2 UK -->
-</div>
-<!-- FIM _______ CANAL 4______ EUROSPORT2  ENG /* LINK OK */  _________________________________________________ -->
-      
-<!-- INICIO __CANAL 5____ EUROSPORT2 ESP  /* LINK OK */ _________________________________________________ -->      
-<div id='myDIV5' style='display:none'>
-	<a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>Audio:.SPANISH..</a>
-	<iframe allowfullscreen='' autoplay='0' autostart='false' class='streamshark-iframe' frameborder='no' height='620' sandbox='allow-scripts' scrolling='no' src='//popcdn.day/go.php?stream=EURO2ES' width='900'/>
-	  
-	<!-- INICIO SandBLAST ADs - EUROSPORT2 ES -->
-	            
-	<!-- FIM SandBLAST ADs - EUROSPORT2 ES -->
-	            
-	<!-- INICIO StreamShark RESIZE  - EUROSPORT2 ES -->
-	<!-- <script type='text/javascript'>//<![CDATA[
-	(function() {
-	  // Get all video iframes from StreamShark only
-	  const iframes = document.querySelectorAll('iframe[src*="//popcdn.day/go.php?stream=EURO2ES"]');
-	
-	  if (iframes.length) {
-	    // Loop through all the iframes
-	    for (let i = 0; i < iframes.length; i++) {
-	      // Get the aspect ratio of the iframe, and a reference to its parent node
-	      const el = iframes[i];
-	      const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
-	      const parentNode = el.parentNode;
-	
-	      // Create a wrapper (div) element for the iframe, and set its aspect ratio
-	      const wrapper = document.createElement('div');
-	      wrapper.className = 'iframe-wrapper';
-	      wrapper.style.paddingTop = aspectRatio * 100 + '%';
-	
-	      // Insert the wrapper in front of the iframe
-	      parentNode.insertBefore(wrapper, el);
-	
-	      // Remove the iframe from the DOM, and append it to the wrapper instead
-	      el.remove();
-	      wrapper.appendChild(el);
-	
-	      // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
-	      el.removeAttribute('width');
-	      el.removeAttribute('height');
-	    }
-	  }
-	})();
-	  //]]></script> -->
-	<!-- FIM StreamShark RESIZE - EUROSPORT2 ES -->
-</div>
-<!-- FIM _______ CANAL 5____ EUROSPORT2 ESP  /* LINK OK */ _________________________________________________ -->      
+      </div>
 
-<!-- INICIO __CANAL 6____ EUROSPORT2 PT  /* LINK OK */ _________________________________________________ -->      
-<div id='myDIV11' style='display:none'>
-	<a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>Audio:.PORT-PORTUGAL..</a>
-	<iframe allowfullscreen='' class='streamshark-iframe' do-not-allow='autoplay' frameborder='no' height='620' sandbox='allow-scripts' scrolling='no' src='//popcdn.day/go.php?stream=EURO2PT' width='900'/>
-	  
-	<!-- INICIO SandBLAST ADs - EUROSPORT2 PT-PT -->
-	                      
-	<!-- FIM SandBLAST ADs - EUROSPORT2 PT-PT -->
-	            
-	<!-- INICIO StreamShark RESIZE  - EUROSPORT2 PT-PT -->
-	            
-	<!-- <script type='text/javascript'>//<![CDATA[
-	(function() {
-	  // Get all video iframes from StreamShark only
-	  const iframes = document.querySelectorAll('iframe[src*="//popcdn.day/go.php?stream=EURO2PT"]');
-	
-	  if (iframes.length) {
-	    // Loop through all the iframes
-	    for (let i = 0; i < iframes.length; i++) {
-	      // Get the aspect ratio of the iframe, and a reference to its parent node
-	      const el = iframes[i];
-	      const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
-	      const parentNode = el.parentNode;
-	
-	      // Create a wrapper (div) element for the iframe, and set its aspect ratio
-	      const wrapper = document.createElement('div');
-	      wrapper.className = 'iframe-wrapper';
-	      wrapper.style.paddingTop = aspectRatio * 100 + '%';
-	
-	      // Insert the wrapper in front of the iframe
-	      parentNode.insertBefore(wrapper, el);
-	
-	      // Remove the iframe from the DOM, and append it to the wrapper instead
-	      el.remove();
-	      wrapper.appendChild(el);
-	
-	      // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
-	      el.removeAttribute('width');
-	      el.removeAttribute('height');
-	    }
-	  }
-	})();
-	  //]]></script> -->
-	<!-- FIM StreamShark RESIZE - EUROSPORT2 PT-PT -->
-</div>
-<!-- FIM _______ CANAL 6____ EUROSPORT2 PT  /* LINK OK */ _________________________________________________ -->     
-          
-<!-- INICIO __CANAL 7____ ESPN1 BRASIL  /* LINK OK */ _________________________________________________ -->      
-<div id='myDIV6' style='display:none'>
-	<a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAM5WyxKNzXSfDScHtj49Mr9NliSXN-gdCtxr38uvj7oIABoQN6aBii08yXO8TFP2LovSgJaA2d0eyxXjyjSGJuvaNcX0VxrXjMu3nSRGpvlIFqJx9gE6-628GCq4le7vyG7gZLhdbWdi7ptxsLOBFX3FNpQnZ83k2nRdr0lxN3Y8-GMILTUE-Pjek8g/s391/ESPN1.png' style='height: 20px;'/>Audio:.PORT-BRASIL..</a>
-	<iframe allowfullscreen='' class='streamshark-iframe' do-not-allow='autoplay' frameborder='no' height='620' name='Player' scrolling='no' src='https://sinalpublico.co/player3/ch.php?canal=espn' width='900'/>
-	
-	<!-- <script type='text/javascript'>//<![CDATA[
-	(function() {
-	  // Get all video iframes from StreamShark only
-	  const iframes = document.querySelectorAll('iframe[src*="sinalpublico.co/player3/ch.php?canal=espn"]');
-	
-	  if (iframes.length) {
-	    // Loop through all the iframes
-	    for (let i = 0; i < iframes.length; i++) {
-	      // Get the aspect ratio of the iframe, and a reference to its parent node
-	      const el = iframes[i];
-	      const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
-	      const parentNode = el.parentNode;
-	
-	      // Create a wrapper (div) element for the iframe, and set its aspect ratio
-	      const wrapper = document.createElement('div');
-	      wrapper.className = 'iframe-wrapper';
-	      wrapper.style.paddingTop = aspectRatio * 100 + '%';
-	
-	      // Insert the wrapper in front of the iframe
-	      parentNode.insertBefore(wrapper, el);
-	
-	      // Remove the iframe from the DOM, and append it to the wrapper instead
-	      el.remove();
-	      wrapper.appendChild(el);
-	
-	      // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
-	      el.removeAttribute('width');
-	      el.removeAttribute('height');
-	    }
-	  }
-	})();
-	  //]]></script> -->
+      <!-- DIV iframe6 = EUROSPORT2 ESPANHOL -->
+      <div id="iframe6" class="iframe-container">
+            <a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>Audio:.SPANISH..</a><br>
 
-</div>
-<!-- FIM _______ CANAL 7___ ESPN1 BRASIL  /* LINK OK */ _________________________________________________ -->      
+            <iframe class='streamshark-iframe' sandbox='allow-scripts' scrolling='no' src='//popcdn.day/go.php?stream=EURO2ES'/>
           
-<!-- INICIO __CANAL 8____ ESPN2 BRASIL  /* LINK OK */ _________________________________________________ -->      
-<div id='myDIV7' style='display:none'>
-	<a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWJaiCiamwdK5jDliUy6ZPPhomitdofvMV591BLx7owodvJFOfWXV34CzONF2ImfDTHM6RHjh-Z5RXJVShHsdvPX8iPuzl-7YzPY6DP0__8ovTdeRa_FnSlKzoJy4BiKsQFKhg-dOeXTUFfGGYF65itGCOb3W5dzoMtqSfTG_S_hZXJvdLzOBN08kifA/s391/ESPN2.png' style='height: 20px;'/>Audio:.PORT-BRASIL..</a>   -->
-	<iframe allowfullscreen='' class='streamshark-iframe' frameborder='no' height='620' name='Player' scrolling='no' src='https://sinalpublico.co/player3/ch.php?canal=espn2' width='900'/>
-	                
-	<!--  <script type='text/javascript'>//<![CDATA[
-	(function() {
-	  // Get all video iframes from StreamShark only
-	  const iframes = document.querySelectorAll('iframe[src*="sinalpublico.co/player3/ch.php?canal=espn2"]');
-	
-	  if (iframes.length) {
-	    // Loop through all the iframes
-	    for (let i = 0; i < iframes.length; i++) {
-	      // Get the aspect ratio of the iframe, and a reference to its parent node
-	      const el = iframes[i];
-	      const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
-	      const parentNode = el.parentNode;
-	
-	      // Create a wrapper (div) element for the iframe, and set its aspect ratio
-	      const wrapper = document.createElement('div');
-	      wrapper.className = 'iframe-wrapper';
-	      wrapper.style.paddingTop = aspectRatio * 100 + '%';
-	
-	      // Insert the wrapper in front of the iframe
-	      parentNode.insertBefore(wrapper, el);
-	
-	      // Remove the iframe from the DOM, and append it to the wrapper instead
-	      el.remove();
-	      wrapper.appendChild(el);
-	
-	      // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
-	      el.removeAttribute('width');
-	      el.removeAttribute('height');
-	    }
-	  }
-	})();
-	  //]]></script> -->
-</div>
-<!-- FIM _______ CANAL 8____ ESPN2 BRASIL  /* LINK OK */ _________________________________________________ -->      
+            !-- Sandblaster Sandbox iframe cleaner  - EUROSPORT2 ES -->
+            <script src="https://github.com/mazobikersstreaming/mazobikersstreaming/blob/main/sandblaster.js"></script> 
 
-<!-- INICIO __CANAL 9____ ESPN3 BRASIL  /* LINK OK */ _________________________________________________ -->      
-	<div id='myDIV8' style='display:none'>
-	<a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHoWrwVzxFKPFSaPLsgXYVIh1Nd6F71jTm5T195uOChumUYs0Jl61eNyyht9v1mlXwvLe9mu8ZtmXkcwQ-C2DAA3VRWDvlIUi-ov2Ua5NFG-eHRA53VP67RCeoGb9SR6nTbLI94NKt9QbsFPfLha_a7MGicDp4Q08KjA-04cBF3pjr8rX4IyjcCMTCDQ/s391/ESPN3.png' style='height: 20px;'/>Audio:.PORT-BRASIL..</a>
-	<iframe allowfullscreen='' class='streamshark-iframe' frameborder='no' height='620' name='Player' scrolling='no' src='https://sinalpublico.co/player3/ch.php?canal=espn3' width='900'/>
-	
-	<!--  <script type='text/javascript'>//<![CDATA[
-	(function() {
-	  // Get all video iframes from StreamShark only
-	  const iframes = document.querySelectorAll('iframe[src*="sinalpublico.co/player3/ch.php?canal=espn3"]');
-	
-	  if (iframes.length) {
-	    // Loop through all the iframes
-	    for (let i = 0; i < iframes.length; i++) {
-	      // Get the aspect ratio of the iframe, and a reference to its parent node
-	      const el = iframes[i];
-	      const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
-	      const parentNode = el.parentNode;
-	
-	      // Create a wrapper (div) element for the iframe, and set its aspect ratio
-	      const wrapper = document.createElement('div');
-	      wrapper.className = 'iframe-wrapper';
-	      wrapper.style.paddingTop = aspectRatio * 100 + '%';
-	
-	      // Insert the wrapper in front of the iframe
-	      parentNode.insertBefore(wrapper, el);
-	
-	      // Remove the iframe from the DOM, and append it to the wrapper instead
-	      el.remove();
-	      wrapper.appendChild(el);
-	
-	      // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
-	      el.removeAttribute('width');
-	      el.removeAttribute('height');
-	    }
-	  }
-	})();
-	//]]></script> -->
-</div>
-<!-- FIM _______ CANAL 9____ ESPN3 BRASIL  /* LINK OK *// _________________________________________________ -->  
+            <!-- INICIO StreamShark RESIZE  - EUROSPORT2 ES -->
+            <script type='text/javascript'>//<![CDATA[
+            (function() {
+              // Get all video iframes from StreamShark only
+              const iframes = document.querySelectorAll('iframe[src*="//popcdn.day/go.php?stream=EURO2ES"]');
 
-<!-- INICIO __CANAL 11____ REDE MINAS - TV BRASIL /* LINK OK */ _________________________________________________ -->      
-<div id='myDIV12' style='display:none'>
-	<a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Rede_Minas_logo.png/799px-Rede_Minas_logo.png' style='height: 20px;'/>Audio:.PORT-BRASIL..</a>
-	<iframe allowfullscreen='' class='streamshark-iframe' frameborder='no' height='620' name='Player' scrolling='no' src='https://emcplay.com/external-video-iframe/ ' width='900'/>
-	              
-	<!-- <script type='text/javascript'>//<![CDATA[
-	(function() {
-	  // Get all video iframes from StreamShark only
-	  const iframes = document.querySelectorAll('iframe[src*="emcplay.com/external-video-iframe/
-	"]');
-	
-	  if (iframes.length) {
-	    // Loop through all the iframes
-	    for (let i = 0; i < iframes.length; i++) {
-	      // Get the aspect ratio of the iframe, and a reference to its parent node
-	      const el = iframes[i];
-	      const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
-	      const parentNode = el.parentNode;
-	
-	      // Create a wrapper (div) element for the iframe, and set its aspect ratio
-	      const wrapper = document.createElement('div');
-	      wrapper.className = 'iframe-wrapper';
-	      wrapper.style.paddingTop = aspectRatio * 100 + '%';
-	
-	      // Insert the wrapper in front of the iframe
-	      parentNode.insertBefore(wrapper, el);
-	
-	      // Remove the iframe from the DOM, and append it to the wrapper instead
-	      el.remove();
-	      wrapper.appendChild(el);
-	
-	      // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
-	      el.removeAttribute('width');
-	      el.removeAttribute('height');
-	    }
-	  }
-	})();
-	  //]]></script> -->
-</div>
-<!-- FIM _______ CANAL 11____ REDE MINAS - TV BRASIL  /* LINK OK *// _________________________________________________ --> 
+              if (iframes.length) {
+                // Loop through all the iframes
+                for (let i = 0; i < iframes.length; i++) {
+                  // Get the aspect ratio of the iframe, and a reference to its parent node
+                  const el = iframes[i];
+                  const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
+                  const parentNode = el.parentNode;
+
+                  // Create a wrapper (div) element for the iframe, and set its aspect ratio
+                  const wrapper = document.createElement('div');
+                  wrapper.className = 'iframe-wrapper';
+                  wrapper.style.paddingTop = aspectRatio * 100 + '%';
+
+                  // Insert the wrapper in front of the iframe
+                  parentNode.insertBefore(wrapper, el);
+
+                  // Remove the iframe from the DOM, and append it to the wrapper instead
+                  el.remove();
+                  wrapper.appendChild(el);
+
+                  // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
+                  el.removeAttribute('width');
+                  el.removeAttribute('height');
+                }
+              }
+              })();
+              //]]></script>
+        <!-- FIM StreamShark RESIZE - EUROSPORT2 ES -->
+    </div>
+
+    <!-- DIV iframe7 = EUROSPORT2 PORTUGAL -->
+    <div id="iframe7" class="iframe-container">
+            <a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5BLPdoYdfLNBFpC0x6Zz1KJtrNu_dAcV3WURqwP0XCLO2t1VQLsy3I8HZU6QeRAUWrSefT071Y9CGTm-CLTx_UbDUFxfMcJqSJevuDtHAsqRpAEF9-1AyyWcShDbw_YdxIQ0iFoUgWdfX5_cXitaD3dXLnF6ANkXd1DyHfQw20RJfhSbA2ReGhB9OQg/s391/EUROSPORT2.png' style='height: 20px;'/>Audio:.PORT-PORTUGAL..</a><br>
+            
+            <iframe class='streamshark-iframe' frameborder='no' sandbox='allow-scripts' src='//popcdn.day/go.php?stream=EURO2PT'/>
           
-<!-- INICIO __CANAL 12____ RTP1 PORTUGAL  /* LINK OK */ _________________________________________________ -->      
-<div id='myDIV13' style='display:none'>
-	<a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJOMHv-gzyHsEuprqbrm1seupjcJ74vkxHUYYXHnp6IesaQAipZNd39MFjjVKmdwpzs3rj4BsPryiXWjMDFwIiZ3wJj0is-h9vsr-wYigiUHb-UKePSj-RjvXHxniqMMJT-c3eLt_wYmY7ATRWx0NK0EIuXPxHh39Aw2wMU9xF1Q2maALnCu3FAZpmto9C/s391/RTP1.png' style='height: 20px;'/>Audio:.POR-PORTUGAL..</a>   
-	<iframe allowfullscreen='' class='streamshark-iframe' frameborder='no' height='620' name='Player' scrolling='no' src=' ' width='900'/>
-	 
-	<!-- <script type='text/javascript'>//<![CDATA[
-	(function() {
-	  // Get all video iframes from StreamShark only
-	  const iframes = document.querySelectorAll('iframe[src*="d.daddylivehd.sx/embed/stream-719.php"]');
-	
-	  if (iframes.length) {
-	    // Loop through all the iframes
-	    for (let i = 0; i < iframes.length; i++) {
-	      // Get the aspect ratio of the iframe, and a reference to its parent node
-	      const el = iframes[i];
-	      const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
-	      const parentNode = el.parentNode;
-	
-	      // Create a wrapper (div) element for the iframe, and set its aspect ratio
-	      const wrapper = document.createElement('div');
-	      wrapper.className = 'iframe-wrapper';
-	      wrapper.style.paddingTop = aspectRatio * 100 + '%';
-	
-	      // Insert the wrapper in front of the iframe
-	      parentNode.insertBefore(wrapper, el);
-	
-	      // Remove the iframe from the DOM, and append it to the wrapper instead
-	      el.remove();
-	      wrapper.appendChild(el);
-	
-	      // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
-	      el.removeAttribute('width');
-	      el.removeAttribute('height');
-	    }
-	  }
-	})();
-	  //]]></script>  -->
-</div>
-<!-- FIM _______ CANAL 12____ RPT1 PORTUGAL  /* LINK OK *// _________________________________________________ --> 
+            !-- Sandblaster Sandbox iframe cleaner  - EUROSPORT2 PT -->
+            <script src="https://github.com/mazobikersstreaming/mazobikersstreaming/blob/main/sandblaster.js"></script> 
+
+            <!-- INICIO StreamShark RESIZE  - EUROSPORT2 PT-PT -->
+
+            <!-- <script type='text/javascript'>//<![CDATA[
+            (function() {
+              // Get all video iframes from StreamShark only
+              const iframes = document.querySelectorAll('iframe[src*="//popcdn.day/go.php?stream=EURO2PT"]');
+
+              if (iframes.length) {
+                // Loop through all the iframes
+                for (let i = 0; i < iframes.length; i++) {
+                  // Get the aspect ratio of the iframe, and a reference to its parent node
+                  const el = iframes[i];
+                  const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
+                  const parentNode = el.parentNode;
+
+                  // Create a wrapper (div) element for the iframe, and set its aspect ratio
+                  const wrapper = document.createElement('div');
+                  wrapper.className = 'iframe-wrapper';
+                  wrapper.style.paddingTop = aspectRatio * 100 + '%';
+
+                  // Insert the wrapper in front of the iframe
+                  parentNode.insertBefore(wrapper, el);
+
+                  // Remove the iframe from the DOM, and append it to the wrapper instead
+                  el.remove();
+                  wrapper.appendChild(el);
+
+                  // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
+                  el.removeAttribute('width');
+                  el.removeAttribute('height');
+                }
+              }
+            })();
+              //]]></script> -->
+            <!-- FIM StreamShark RESIZE - EUROSPORT2 PT-PT -->
+    </div>
+    <!-- DIV iframe7 = RTP2 PORTUGAL -->
+    <div id="iframe8" class="iframe-container">
+         <a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/RTP2_logo_2016.png/640px-RTP2_logo_2016.png' style='height: 20px;'/>Audio:.PORT-PORTUGAL..</a><br>
+            
+            <iframe class='streamshark-iframe' frameborder='no' sandbox='allow-scripts' src='//popcdn.day/go.php?stream=RTP2'/>
           
-<!-- INICIO _______ PERFIL DAS GRANDES PROVAS /* LINK OK */ _________________________________________________ -->      
-<div id='myDIV9' style='display:none'>
+            !-- Sandblaster Sandbox iframe cleaner  - EUROSPORT2 PT -->
+            <script src="https://github.com/mazobikersstreaming/mazobikersstreaming/blob/main/sandblaster.js"></script> 
+
+            <!-- INICIO StreamShark RESIZE  - EUROSPORT2 PT-PT -->
+
+            <!-- <script type='text/javascript'>//<![CDATA[
+            (function() {
+              // Get all video iframes from StreamShark only
+              const iframes = document.querySelectorAll('iframe[src*="//popcdn.day/go.php?stream=RTP2"]');
+
+              if (iframes.length) {
+                // Loop through all the iframes
+                for (let i = 0; i < iframes.length; i++) {
+                  // Get the aspect ratio of the iframe, and a reference to its parent node
+                  const el = iframes[i];
+                  const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
+                  const parentNode = el.parentNode;
+
+                  // Create a wrapper (div) element for the iframe, and set its aspect ratio
+                  const wrapper = document.createElement('div');
+                  wrapper.className = 'iframe-wrapper';
+                  wrapper.style.paddingTop = aspectRatio * 100 + '%';
+
+                  // Insert the wrapper in front of the iframe
+                  parentNode.insertBefore(wrapper, el);
+
+                  // Remove the iframe from the DOM, and append it to the wrapper instead
+                  el.remove();
+                  wrapper.appendChild(el);
+
+                  // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
+                  el.removeAttribute('width');
+                  el.removeAttribute('height');
+                }
+              }
+            })();
+              //]]></script> -->
+            <!-- FIM StreamShark RESIZE - EUROSPORT2 PT-PT -->
+    </div>
     
-	<!-- <script>            
-	var valueSize = $( "#iframe" ).offset();
-	var totalsize = (valueSize.top * 2) + valueSize.left;
-		$( "#iframe" ).height(totalsize);            
-	</script> -->
-  			
-	<iframe allowfullscreen='allowfullscreen' class='streamshark-iframe' frameborder='0' height='620' loading='lazy' marginheight='0' marginwidth='0' scrolling='yes' src='https://racecenter.paris-nice.fr/en/' width='1000'/>
-        <!-- https://giroditalia.it/en/livehub/ -->
-        <!-- https://racecenter.letour.fr/en/ -->
-        <!-- https://racecenter.lavuelta.es/en/ -->
-        <!-- https://racecenter.paris-nice.fr/en/ -->
-
-	<!--  <script type='text/javascript'>//<![CDATA[
+    <!-- DIV iframe9 = ESPN BRASIL -->    
+    <div id="iframe9" class="iframe-container">
+    	<a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAM5WyxKNzXSfDScHtj49Mr9NliSXN-gdCtxr38uvj7oIABoQN6aBii08yXO8TFP2LovSgJaA2d0eyxXjyjSGJuvaNcX0VxrXjMu3nSRGpvlIFqJx9gE6-628GCq4le7vyG7gZLhdbWdi7ptxsLOBFX3FNpQnZ83k2nRdr0lxN3Y8-GMILTUE-Pjek8g/s391/ESPN1.png' style='height: 20px;'/>Audio:.PORT-BRASIL..</a><br>
+	
+    <iframe class='streamshark-iframe' scrolling='no' src='https://embedmax.site/tvl/espn1.php'/>
+	
+    <script type='text/javascript'>//<![CDATA[
 	(function() {
 	  // Get all video iframes from StreamShark only
-	  const iframes = document.querySelectorAll('iframe[src*="racecenter.paris-nice.fr"]');
+	  const iframes = document.querySelectorAll('iframe[src*="embedmax.site/tvl/espn1.php"]');
 	
 	  if (iframes.length) {
 	    // Loop through all the iframes
@@ -1034,121 +459,63 @@ $('button').on('click', function () {
 	      el.removeAttribute('height');
 	    }
 	  }
-	})();
-	  //]]></script> -->
-</div>
-<hr/>
+      })();
+	  //]]></script>
+
+    </div>
+
+    <!-- DIV iframe10 = ESPN2 BRASIL -->  
+    <div id="iframe10" class="iframe-container">
+    
+    <a style='font-size:14px;line-height: 1.9;'>Canal ativado.<i class='fa fa-thumbs-o-up'/><img alt='Image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiHoWrwVzxFKPFSaPLsgXYVIh1Nd6F71jTm5T195uOChumUYs0Jl61eNyyht9v1mlXwvLe9mu8ZtmXkcwQ-C2DAA3VRWDvlIUi-ov2Ua5NFG-eHRA53VP67RCeoGb9SR6nTbLI94NKt9QbsFPfLha_a7MGicDp4Q08KjA-04cBF3pjr8rX4IyjcCMTCDQ/s391/ESPN3.png' style='height: 20px;'/>Audio:.PORT-BRASIL..</a>
+	
+    <iframe class='streamshark-iframe' frameborder='no' scrolling='no' src='https://embedmax.site/tvl/espn2.php'/>
+	
+	<script type='text/javascript'>//<![CDATA[
+	(function() {
+	  // Get all video iframes from StreamShark only
+	  const iframes = document.querySelectorAll('iframe[src*="embedmax.site/tvl/espn2.php"]');
+	
+	  if (iframes.length) {
+	    // Loop through all the iframes
+	    for (let i = 0; i < iframes.length; i++) {
+	      // Get the aspect ratio of the iframe, and a reference to its parent node
+	      const el = iframes[i];
+	      const aspectRatio = el.getAttribute('height') / el.getAttribute('width');
+	      const parentNode = el.parentNode;
+	
+	      // Create a wrapper (div) element for the iframe, and set its aspect ratio
+	      const wrapper = document.createElement('div');
+	      wrapper.className = 'iframe-wrapper';
+	      wrapper.style.paddingTop = aspectRatio * 100 + '%';
+	
+	      // Insert the wrapper in front of the iframe
+	      parentNode.insertBefore(wrapper, el);
+	
+	      // Remove the iframe from the DOM, and append it to the wrapper instead
+	      el.remove();
+	      wrapper.appendChild(el);
+	
+	      // Lastly, remove the width and height attributes from the iframe, as they are no longer valid
+	      el.removeAttribute('width');
+	      el.removeAttribute('height');
+	    }
+	  }
+      })();
+      //]]></script>
+    </div>
+
+
+    <script>
+        function toggleIframe(iframeId) {
+            var iframeContainer = document.getElementById(iframeId);
+            if (iframeContainer.style.display === "none" || iframeContainer.style.display === "") {
+                iframeContainer.style.display = "block";
+            } else {
+                iframeContainer.style.display = "none";
+            }
+        }
+    </script>
 </center>
-
-      
-<!-- FIM _______ PERFIL DAS GRANDES PROVAS /* LINK OK */ _________________________________________________ -->        
-
-
-</div> 
-
-    
-
-    
-        <script>
-            document.getElementById("myFunction03").addEventListener("click", function() {
-                var x = document.getElementById("myDIV3");
-                  if (x.style.display === "none") {
-                    x.style.display = "block";
-                  } else {
-                    x.style.display = "none";
-                  }
-            });
-        </script>  
-    
-<script>
-function myFunction6() {
-  var x = document.getElementById("myDIV6");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
-<script>
-function myFunction7() {
-  var x = document.getElementById("myDIV7");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
-  <script>
-function myFunction8() {
-  var x = document.getElementById("myDIV8");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
-  <script>
-function myFunction9() {
-  var x = document.getElementById("myDIV9");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
-	
-<script>
-function myFunction10() {
-  var x = document.getElementById("myDIV10");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
-
-  <script>
-function myFunction11() {
-  var x = document.getElementById("myDIV11");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
-
-   <script>
-function myFunction12() {
-  var x = document.getElementById("myDIV12");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
-   <script>
-function myFunction13() {
-  var x = document.getElementById("myDIV13");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
- 
-<!-- FIM NOVO DISPLAY COM MENU DE OPCAO DE STREAMING IPTV PARA ASSISTIR -->   
-  
-<!-- --------------------###------------------ -->
-  
-  
 </body>
-
 </html>
